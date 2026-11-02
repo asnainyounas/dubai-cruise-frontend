@@ -27,8 +27,8 @@ export default function RoutesSection() {
               <div key={route.title}>
                 <div className="main-title text-white">{route.title}</div>
                 <a href={route.href} className="we-sub-btn we_background mb30">
-                  <span className="depature-block" />
-                  Depature Location
+                  <span className="Departure-block" />
+                  Departure Location
                 </a>
               </div>
             ))}

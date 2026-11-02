@@ -81,7 +81,7 @@ export const WELCOME_DATA: WelcomeData = {
     prefix: "Get the most happening and fascinating ",
     text: "dhow cruise in Dubai",
     suffix: " We promise to make the dhow cruise Dubai worth repeating again.",
-    url: "https://www.raynatours.com/dhow-cruise-dubai-c-11690",
+    url: "/book",
   },
 };
 
@@ -91,11 +91,14 @@ export interface PackageItem {
   img: string;
   alt: string;
   title: string;
+  slug: string;
   duration: string;
   text: string;
   book: string;
   wa: string;
   href?: string;
+  hasPage: boolean;
+  bookUrl?: string; // optional: a real booking page link for this tour
 }
 
 export const PACKAGES: PackageItem[] = [
@@ -104,31 +107,37 @@ export const PACKAGES: PackageItem[] = [
     img: "dhow-cruise-creek-small.jpg",
     alt: "Dubai Cruise Creek",
     title: "Dhow Cruise Creek",
+    slug: "creek-cruise",
     duration: "Duration : 2 hours",
     text: "A trip down the historic creek on our wooden dhow with Arabian-inspired setting is one of the most splendid things to enjoy during Dubai vacation. Offers you a relaxing experience",
-    book: "https://www.raynatours.com/dubai/dhow-cruise/dhow-cruise-dinner---creek-e-86?utm_source=dhowcruiseindubai&utm_medium=link&utm_campaign=seosmallsites",
+    book: "/book?tour=creek-cruise",
     wa: "Dhow%20Cruise%20Creek",
     href: "/cruises/creek-cruise",
+    hasPage: true,
   },
   {
     col: 1,
     img: "musandam-dibba-tour-small.jpg",
     alt: "Musandam Dibba Tour",
     title: "Musandam Dibba Tour",
+    slug: "musandam-dibba-tour",
     duration: "Duration : 5 hours",
     text: "Experience something different apart from watching the huge, luxurious skyscrapers and malls. Try out by taking by the Musandam Dibba tour, a experience in Oman.",
-    book: "https://www.raynatours.com/dubai/dhow-cruise/musandam-dibba-tour-e-63?utm_source=dhowcruiseindubai&utm_medium=link&utm_campaign=seosmallsites",
+    book: "/book?tour=musandam-dibba-tour",
     wa: "Musandam%20Dibba%20Tour",
+    hasPage: false,
   },
   {
     col: 1,
     img: "dhow-cruise-abu-dhabi-small.jpg",
     alt: "Dhow Cruise in Abu Dhabi",
     title: "Dhow Cruise in Abu Dhabi",
+    slug: "dhow-cruise-in-abu-dhabi",
     duration: "Duration : 2 hours",
     text: "Join us for an outstanding cruising experience that is not to be missed in Abu Dhabi! Our two-hour cruise is a wonderful way to relax and views of Abu Dhabi's skyline.",
-    book: "https://www.raynatours.com/abu-dhabi/dhow-cruise/dhow-cruise-abu-dhabi-e-241?utm_source=dhowcruiseindubai&utm_medium=link&utm_campaign=seosmallsites",
+    book: "/book?tour=dhow-cruise-in-abu-dhabi",
     wa: "Dhow%20Cruise%20in%20Abu%20Dhabi",
+    hasPage: false,
   },
   {
     col: 2,
@@ -136,11 +145,13 @@ export const PACKAGES: PackageItem[] = [
     img: "dhow-cruise-marina-small.jpg",
     alt: "Dhow Cruise Marina",
     title: "Dhow Cruise Marina",
+    slug: "dubai-marina-cruise",
     duration: "Duration : 2 hours",
     text: "Join us for an outstanding cruising experience that is not to be missed in Dubai! Our two-hour cruise is a wonderful way to relax and views of Dubai's skyline.",
-    book: "https://www.raynatours.com/dubai/dhow-cruise/dhow-cruise-dinner---marina-e-87?utm_source=dhowcruiseindubai&utm_medium=link&utm_campaign=seosmallsites",
+    book: "/book?tour=dubai-marina-cruise",
     wa: "Dhow%20Cruise%20Marina",
     href: "/cruises/dubai-marina-cruise",
+    hasPage: true,
   },
   {
     col: 2,
@@ -148,40 +159,48 @@ export const PACKAGES: PackageItem[] = [
     img: "dhow-cruise-and-desert-safari-small.jpg",
     alt: "Desert Safari - Dhow Cruise",
     title: "Desert Safari - Dhow Cruise",
+    slug: "desert-safari-dhow-cruise",
     duration: "Duration : 6 hours",
     text: "Two of the best things, you will never stop thanking yourself after enjoying them in Dubai, are the Desert Safari and Dhow Cruise. They are the must for every tourist to experience otherwise the whole idea of vacationing will fall flat.",
-    book: "https://www.dhowcruiseindubai.com/desert-safari-dhow-cruise.html",
+    book: "/book?tour=desert-safari-dhow-cruise",
     wa: "Desert%20Safari%20-%20Dhow%20Cruise",
+    hasPage: false,
   },
   {
     col: 3,
     img: "special-charter-small.jpg",
     alt: "Charter For Special Events",
     title: "Charter For Special Events ",
+    slug: "charter-for-special-events",
     duration: "Duration : 2 hours",
     text: "Dhow Cruise in Dubai provides fantastic dhow cruise options for special events and functions including get-together, corporate events, kids' parties, and family events",
-    book: "https://www.dhowcruiseindubai.com/dhow-charter-special-events.html",
+    book: "/book?tour=charter-for-special-events",
     wa: "Charter%20For%20Special%20Events",
+    hasPage: false,
   },
   {
     col: 3,
     img: "dhow-cruise-and-dubai-city-tour-small.jpg",
     alt: "Dhow Cruise - Dubai City Tour",
     title: "Dhow Cruise - Dubai City Tour",
+    slug: "dhow-cruise-dubai-city-tour",
     duration: "Duration : 4 hours",
     text: "When vacationing in Dubai, be sure to include all attractions and activities that allow you to experience this incredible city at its best. We, dhowcruiseindubai.com, take care of your holiday needs.",
-    book: "https://www.dhowcruiseindubai.com/dhow-cruise-dubai-city-tour.html",
+    book: "/book?tour=dhow-cruise-dubai-city-tour",
     wa: "Dhow%20Cruise%20-%20Dubai%20City%20Tour",
+    hasPage: false,
   },
   {
     col: 3,
     img: "suset-dhow-cruise-dinner-dubai.jpg",
     alt: "Sunset Cruise in Dubai Marina",
     title: "Lotus Mega Yacht Dinner Cruise",
+    slug: "lotus-mega-yacht-dinner-cruise",
     duration: "Duration : 180 mn",
     text: "Step aboard the Lotus Mega Yacht Dinner Cruise for a grand evening of fine dining, live entertainment, and stunning waterfront views, where luxury, elegance, and unforgettable moments come together under the night sky.",
-    book: "https://www.raynatours.com/dubai/cruise-and-boat-tours/lotus-mega-yacht-dinner-cruise-e-507783?utm_source=dhowcruiseindubai&utm_medium=link&utm_campaign=seosmallsites",
+    book: "/book?tour=lotus-mega-yacht-dinner-cruise",
     wa: "Lotus%20Mega%20Yacht%20Dinner%20Cruise",
+    hasPage: false,
   },
 ];
 
@@ -195,15 +214,15 @@ export interface MenuItem {
 export const MENUS: MenuItem[] = [
   {
     heading: "Dhow Cruise Creek",
-    departure: "Depature Time : 08:30 PM",
-    duration: "Duration : 1.5 Hours",
-    price: "Price : 75 AED",
+    departure: "Departure Time : TODO: add real details",
+    duration: "Duration : 2 Hours",
+    price: "Price : TODO: add real details",
   },
   {
     heading: "Dhow Cruise Marina",
-    departure: "Depature Time : 08:45 PM",
-    duration: "Duration : 1.5 Hours",
-    price: "Price : 140 AED",
+    departure: "Departure Time : Sunset 6:00 PM, Dinner 9:00 PM",
+    duration: "Duration : 2 Hours",
+    price: "Price : TODO: add real details",
   },
 ];
 
@@ -229,7 +248,7 @@ export const ROUTES: RouteItem[] = [
   },
   {
     title: "Dhow Cruise Creek Route",
-    href: "https://maps.google.com/?cid=4977102213412695299",
+    href: "https://maps.app.goo.gl/jpCx4gMWfvvK8o8b6",
   },
 ];
 

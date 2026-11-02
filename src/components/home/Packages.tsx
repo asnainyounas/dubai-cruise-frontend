@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PACKAGES, PackageItem, WA_BASE } from "@/data/home";
+import { PACKAGES, PackageItem } from "@/data/home";
 
 const ANIM: Record<number, string | string[]> = {
   1: "fade-right",
@@ -11,8 +11,10 @@ const ANIM: Record<number, string | string[]> = {
 function PackageCard({ pkg, animIndex }: { pkg: PackageItem; animIndex: number }) {
   const anims = ANIM[pkg.col];
   const anim = Array.isArray(anims) ? anims[animIndex % anims.length] : anims;
-  const linkHref = pkg.href || `#${pkg.title.trim().toLowerCase().replace(/\s+/g, "-")}`;
-  const isInternal = linkHref.startsWith("/");
+  const detailHref = `/cruises/${pkg.slug}`;
+  const waUrl = `https://wa.me/971558479933?text=${encodeURIComponent(
+    `Hello, I would like to book the ${pkg.title.trim()}`
+  )}`;
 
   return (
     <div
@@ -20,54 +22,21 @@ function PackageCard({ pkg, animIndex }: { pkg: PackageItem; animIndex: number }
       data-aos={anim}
       style={{ transitionDuration: "2000ms" }}
     >
-      {isInternal ? (
-        <Link
-          href={linkHref}
-          className={pkg.big ? "cruise-package-image2" : "cruise-package-image1"}
-        >
-          <Image
-            src={`/img/${pkg.img}`}
-            alt={pkg.alt}
-            width={400}
-            height={250}
-          />
-        </Link>
-      ) : (
-        <a
-          href={linkHref}
-          className={pkg.big ? "cruise-package-image2" : "cruise-package-image1"}
-        >
-          <Image
-            src={`/img/${pkg.img}`}
-            alt={pkg.alt}
-            width={400}
-            height={250}
-          />
-        </a>
-      )}
+      <Link href={detailHref} className={pkg.big ? "cruise-package-image2" : "cruise-package-image1"}>
+        <Image src={`/img/${pkg.img}`} alt={pkg.alt} width={400} height={250} />
+      </Link>
 
-      {isInternal ? (
-        <Link href={linkHref}>
-          <h3 className="title">{pkg.title}</h3>
-        </Link>
-      ) : (
-        <a href={linkHref}>
-          <h3 className="title">{pkg.title}</h3>
-        </a>
-      )}
+      <Link href={detailHref}>
+        <h3 className="title">{pkg.title}</h3>
+      </Link>
 
       <div className="duration">{pkg.duration}</div>
       <p>{pkg.text}</p>
       <div className="Flex-btn-block">
-        <a className="cruise-package-link" href={pkg.book} target="_blank" rel="nofollow">
+        <Link className="cruise-package-link" href={`${detailHref}#book`}>
           Book Online
-        </a>
-        <a
-          className="whatsapp-link"
-          href={`${WA_BASE}${pkg.wa}`}
-          target="_blank"
-          rel="nofollow"
-        >
+        </Link>
+        <a className="whatsapp-link" href={waUrl} target="_blank" rel="noopener noreferrer">
           Whatsapp Now
         </a>
       </div>

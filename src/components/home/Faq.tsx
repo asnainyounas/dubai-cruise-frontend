@@ -30,9 +30,24 @@ function FaqItem({
   );
 }
 
-export default function Faq() {
+export interface FaqProps {
+  items?: { q: string; a: string }[];
+  title?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
+export default function Faq({
+  items,
+  title = "Frequently Asked Questions",
+  imageSrc = "/img/faq's.jpg",
+  imageAlt = "Dhow cruise faqs",
+}: FaqProps = {}) {
   const [openIdx, setOpenIdx] = useState(0);
   const [showExtra, setShowExtra] = useState(false);
+
+  const mainItems = items ? items.slice(0, 5) : FAQS_MAIN;
+  const extraItems = items ? items.slice(5) : FAQS_EXTRA;
 
   const toggle = (i: number) => setOpenIdx((cur) => (cur === i ? -1 : i));
 
@@ -40,20 +55,20 @@ export default function Faq() {
     <section className="general-row faq-section" id="faq">
       <div className="dcontainer-fluid">
         <div className="text-center">
-          <div className="main-title mb30">Frequently Asked Questions</div>
+          <div className="main-title mb30">{title}</div>
         </div>
         <div className="faq-grid">
           <div className="faq-img">
             <Image
-              src="/img/faq's.jpg"
-              alt="Dhow cruise faqs"
+              src={imageSrc}
+              alt={imageAlt}
               width={420}
               height={420}
             />
           </div>
           <div className="faq-list">
             <div className="wrapper">
-              {FAQS_MAIN.map((item, i) => (
+              {mainItems.map((item, i) => (
                 <FaqItem
                   key={item.q}
                   number={i + 1}
@@ -63,27 +78,31 @@ export default function Faq() {
                   onToggle={() => toggle(i)}
                 />
               ))}
-              <div className={`faq-extra${showExtra ? " open" : ""}`}>
-                {FAQS_EXTRA.map((item, i) => (
-                  <FaqItem
-                    key={item.q}
-                    number={FAQS_MAIN.length + i + 1}
-                    q={item.q}
-                    a={item.a}
-                    open={openIdx === FAQS_MAIN.length + i}
-                    onToggle={() => toggle(FAQS_MAIN.length + i)}
-                  />
-                ))}
-              </div>
-              <a
-                className="load-question"
-                onClick={() => setShowExtra((s) => !s)}
-                role="button"
-                tabIndex={0}
-              >
-                {showExtra ? "Show less Questions" : "Load more Questions"}{" "}
-                <i aria-hidden="true">›</i>
-              </a>
+              {extraItems.length > 0 && (
+                <>
+                  <div className={`faq-extra${showExtra ? " open" : ""}`}>
+                    {extraItems.map((item, i) => (
+                      <FaqItem
+                        key={item.q}
+                        number={mainItems.length + i + 1}
+                        q={item.q}
+                        a={item.a}
+                        open={openIdx === mainItems.length + i}
+                        onToggle={() => toggle(mainItems.length + i)}
+                      />
+                    ))}
+                  </div>
+                  <a
+                    className="load-question"
+                    onClick={() => setShowExtra((s) => !s)}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    {showExtra ? "Show less Questions" : "Load more Questions"}{" "}
+                    <i aria-hidden="true">›</i>
+                  </a>
+                </>
+              )}
             </div>
           </div>
         </div>

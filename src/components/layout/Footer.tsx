@@ -1,11 +1,14 @@
 import Image from "next/image";
-import { FOOTER_LINKS } from "@/data/home";
+import Link from "next/link";
+import { FOOTER_LINKS } from "@/data/nav";
 import ScrollToTop from "./ScrollToTop";
 
 const POWERED_LOGO =
   "https://d1vqfl8cu8qgdj.cloudfront.net/assets/small_website/image/BDS/white-r-logos.png";
 
 export default function Footer() {
+  const enabledFooterLinks = FOOTER_LINKS.filter((link) => link.enabled);
+
   return (
     <footer className="footer_block" id="contact">
       {/* Fixed bottom bar on mobile */}
@@ -48,10 +51,10 @@ export default function Footer() {
             </div>
             <div className="footer-block footer-links">
               <ul className="href-ul">
-                {FOOTER_LINKS.map((link) => (
+                {enabledFooterLinks.map((link) => (
                   <li key={link.label}>
                     <i aria-hidden="true">›</i>
-                    <a href={link.href}> {link.label}</a>
+                    <Link href={link.href}> {link.label}</Link>
                   </li>
                 ))}
               </ul>

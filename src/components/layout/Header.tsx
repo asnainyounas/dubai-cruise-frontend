@@ -3,10 +3,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CDN, NAV_ITEMS } from "@/data/home";
+import { CDN } from "@/data/home";
+import { NAV_ITEMS } from "@/data/nav";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const enabledNavItems = NAV_ITEMS.filter((item) => item.enabled && item.href !== "/book");
+  const bookNowItem = NAV_ITEMS.find((item) => item.href === "/book" && item.enabled);
 
   return (
     <header className="site-header">
@@ -56,8 +59,8 @@ export default function Header() {
         <div className="bottom-header">
           <div className="dcontainer">
             <ul className={`nav-ul${open ? " open" : ""}`}>
-              {NAV_ITEMS.map((item) => (
-                <li key={item.label} className={item.active ? "active" : undefined}>
+              {enabledNavItems.map((item) => (
+                <li key={item.label}>
                   {item.href.startsWith("/") ? (
                     <Link href={item.href} onClick={() => setOpen(false)}>
                       {item.label}
@@ -69,16 +72,17 @@ export default function Header() {
                   )}
                 </li>
               ))}
-              <li>
-                <a
-                  href="https://www.raynatours.com/dhow-cruise-dubai-c-11690"
-                  rel="nofollow"
-                  className="BookNowBTN"
-                  target="_blank"
-                >
-                  Book Now
-                </a>
-              </li>
+              {bookNowItem && (
+                <li>
+                  <Link
+                    href={bookNowItem.href}
+                    className="BookNowBTN"
+                    onClick={() => setOpen(false)}
+                  >
+                    {bookNowItem.label}
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>

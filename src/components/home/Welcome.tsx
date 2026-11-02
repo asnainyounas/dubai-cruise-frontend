@@ -28,6 +28,7 @@ export default function Welcome() {
                 width={WELCOME_DATA.image.width}
                 height={WELCOME_DATA.image.height}
                 alt={WELCOME_DATA.image.alt}
+                style={{ width: "auto", height: "auto", maxWidth: "100%", maxHeight: "260px", objectFit: "contain" }}
               />
             </div>
           </div>
