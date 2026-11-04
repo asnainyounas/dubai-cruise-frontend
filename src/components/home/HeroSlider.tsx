@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type TransitionEvent } from "react";
 import Image from "next/image";
-import { SLIDES, VIDEO_URL } from "@/data/home";
+import { SLIDES } from "@/data/home";
 
 const N = SLIDES.length;
 // Three copies of the slides, so a slide is always visible on both sides.
@@ -19,7 +19,6 @@ function ArrowIcon({ dir }: { dir: "prev" | "next" }) {
 export default function HeroSlider() {
   const [pos, setPos] = useState(N); // start on the first slide of the middle copy
   const [animate, setAnimate] = useState(true);
-  const [videoOpen, setVideoOpen] = useState(false);
 
   const go = (delta: number) => {
     setAnimate(true);
@@ -73,17 +72,6 @@ export default function HeroSlider() {
                 priority={i === N}
                 style={{ width: "100%", height: "auto", aspectRatio: "16 / 9", objectFit: "cover" }}
               />
-              <span className="ms-play">
-                <button
-                  type="button"
-                  className="video-play-button"
-                  aria-label="Play video"
-                  tabIndex={i === pos ? 0 : -1}
-                  onClick={() => setVideoOpen(true)}
-                >
-                  <span />
-                </button>
-              </span>
             </div>
           ))}
         </div>
@@ -110,19 +98,6 @@ export default function HeroSlider() {
           />
         ))}
       </div>
-
-      {videoOpen && (
-        <div className="video-modal" onClick={() => setVideoOpen(false)}>
-          <div className="video-modal-dialog" onClick={(e) => e.stopPropagation()}>
-            <button type="button" className="video-modal-close" aria-label="Close" onClick={() => setVideoOpen(false)}>
-              ×
-            </button>
-            <div className="video-modal-body">
-              <video src={VIDEO_URL} width="100%" controls autoPlay />
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

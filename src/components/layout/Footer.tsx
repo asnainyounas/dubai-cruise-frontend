@@ -1,10 +1,19 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FOOTER_LINKS } from "@/data/nav";
 import ScrollToTop from "./ScrollToTop";
 
-const POWERED_LOGO =
-  "https://d1vqfl8cu8qgdj.cloudfront.net/assets/small_website/image/BDS/white-r-logos.png";
+// ---- Business details: edit these here, nothing else in this file needs changing ----
+const BUSINESS_NAME = "TODO: add business name";
+const WHATSAPP_NUMBER = "971558479933";
+const PHONE_DISPLAY = "+971 55 847 9933";
+const EMAIL = ""; // add the business email, for example "info@example.com". Empty = no email icon.
+// Social links: add one entry per account, for example
+// { label: "Facebook", href: "https://www.facebook.com/yourpage", className: "facebook" }
+const SOCIAL_LINKS: { label: string; href: string; className: "facebook" | "twitter" }[] = [];
+
+const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  "Hello, I would like to book a dhow cruise"
+)}`;
 
 export default function Footer() {
   const enabledFooterLinks = FOOTER_LINKS.filter((link) => link.enabled);
@@ -15,21 +24,23 @@ export default function Footer() {
       <div className="top-footer">
         <div className="dcontainer-fluid">
           <div className="top-footer-icon">
-            <a href="tel:+97142087433" className="top-footer-icon-block call-icon">
-              <span>+97142087433</span>
+            <a href={`tel:+${WHATSAPP_NUMBER}`} className="top-footer-icon-block call-icon">
+              <span>{PHONE_DISPLAY}</span>
             </a>
             <a
-              href="https://api.whatsapp.com/send?phone=+971565481752&text=Hello_DhowCruiseinDubai"
+              href={waUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="top-footer-icon-block whatsapp-icon"
               aria-label="WhatsApp"
             />
-            <a
-              href="mailto:info@dhowcruiseindubai.com"
-              className="top-footer-icon-block message-icon"
-              aria-label="Email Us"
-            />
+            {EMAIL && (
+              <a
+                href={`mailto:${EMAIL}`}
+                className="top-footer-icon-block message-icon"
+                aria-label="Email Us"
+              />
+            )}
           </div>
         </div>
       </div>
@@ -39,14 +50,7 @@ export default function Footer() {
           <div className="footer-grid">
             <div className="footer-block footer-powered">
               <div className="footer-logo">
-                <span>Powered By</span>
-                <Image
-                  src={POWERED_LOGO}
-                  alt="rayna logo"
-                  width={140}
-                  height={50}
-                  style={{ width: "auto", height: "auto", maxHeight: "60px", maxWidth: "100%" }}
-                />
+                <span className="footer-brand-name">{BUSINESS_NAME}</span>
               </div>
             </div>
             <div className="footer-block footer-links">
@@ -62,35 +66,26 @@ export default function Footer() {
             <div className="footer-block footer-copy">
               <div className="footer-copy-text">
                 <div className="footer-copyright">
-                  <p>© 2026 dhowcruiseindubai.com </p>
-                </div>
-                <div className="footer-copyright dev-line">
                   <p>
-                    Design and Developed By{" "}
-                    <span className="gold">Technoheaven Consultancy</span>{" "}
+                    © {new Date().getFullYear()} {BUSINESS_NAME}. All rights reserved.
                   </p>
                 </div>
               </div>
-              <ul className="social-ul">
-                <li>
-                  <a
-                    href="https://www.facebook.com/dhowcruisesindubai"
-                    className="social-icon-li facebook"
-                    aria-label="Facebook"
-                    target="_blank"
-                    rel="noreferrer"
-                  />
-                </li>
-                <li>
-                  <a
-                    href="https://twitter.com/raynagroup"
-                    className="social-icon-li twitter"
-                    aria-label="Twitter"
-                    target="_blank"
-                    rel="noreferrer"
-                  />
-                </li>
-              </ul>
+              {SOCIAL_LINKS.length > 0 && (
+                <ul className="social-ul">
+                  {SOCIAL_LINKS.map((s) => (
+                    <li key={s.label}>
+                      <a
+                        href={s.href}
+                        className={`social-icon-li ${s.className}`}
+                        aria-label={s.label}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         </div>

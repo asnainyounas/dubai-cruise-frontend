@@ -3,45 +3,42 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CDN } from "@/data/home";
+import { usePathname } from "next/navigation";
 import { NAV_ITEMS } from "@/data/nav";
+
+// To change the logo: put the file in public/img and change this one line.
+// (This is still the original site's logo until your friend sends his own.)
+const LOGO_SRC = "/img/logo.png";
+const WHATSAPP_NUMBER = "971558479933";
+const WHATSAPP_LABEL = "+971 55 847 9933";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   const enabledNavItems = NAV_ITEMS.filter((item) => item.enabled && item.href !== "/book");
   const bookNowItem = NAV_ITEMS.find((item) => item.href === "/book" && item.enabled);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <header className="site-header">
       <nav>
         <div className="top-header">
           <Link className="navbar-brand" href="/">
-            <Image
-              src={`${CDN}/img/logo.png`}
-              width={360}
-              height={96}
-              alt="Dhow Cruise in Dubai Logo"
-              priority
-            />
+            <Image src={LOGO_SRC} width={360} height={96} alt="Dhow Cruise in Dubai Logo" priority />
           </Link>
           <div className="top-header-right">
-            <a
-              className="advertise-logo"
-              href="https://api.whatsapp.com/send?phone=+971565481752&text=Hello_Charter%20For%20Special%20Events"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image
-                src="https://www.dhowcruiseindubai.com/img/special-events.gif"
-                alt="dhow special events"
-                height={40}
-                width={314}
-                unoptimized
-              />
-            </a>
             <ul className="top-contact-ul">
               <li>
-                <span className="icon" /> Call : +971 42087433
+                <a
+                  className="top-wa-link"
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="icon" /> WhatsApp : {WHATSAPP_LABEL}
+                </a>
               </li>
             </ul>
           </div>
@@ -59,26 +56,31 @@ export default function Header() {
         <div className="bottom-header">
           <div className="dcontainer">
             <ul className={`nav-ul${open ? " open" : ""}`}>
-              {enabledNavItems.map((item) => (
-                <li key={item.label}>
-                  {item.href.startsWith("/") ? (
-                    <Link href={item.href} onClick={() => setOpen(false)}>
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <a href={item.href} onClick={() => setOpen(false)}>
-                      {item.label}
-                    </a>
-                  )}
-                </li>
-              ))}
+              {enabledNavItems.map((item) => {
+                const active = isActive(item.href);
+                return (
+                  <li key={item.label}>
+                    {item.href.startsWith("/") ? (
+                      <Link
+                        href={item.href}
+                        className={active ? "nav-active" : undefined}
+                        aria-current={active ? "page" : undefined}
+                        onClick={() => setOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <a href={item.href} onClick={() => setOpen(false)}>
+                        {item.label}
+                      </a>
+                    )}
+                  </li>
+                );
+              })}
               {bookNowItem && (
                 <li>
-                  <Link
-                    href={bookNowItem.href}
-                    className="BookNowBTN"
-                    onClick={() => setOpen(false)}
-                  >
+                  {/* Sends visitors to the cruise cards; each card has its own Book Online button. */}
+                  <Link href="/#packages" className="BookNowBTN" onClick={() => setOpen(false)}>
                     {bookNowItem.label}
                   </Link>
                 </li>

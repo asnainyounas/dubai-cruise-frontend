@@ -1,7 +1,5 @@
 export const CDN = "https://d1vqfl8cu8qgdj.cloudfront.net/assets/Dhowcruise";
 export const WA_BASE = "https://api.whatsapp.com/send?phone=+971565481752&text=Hello_";
-export const VIDEO_URL =
-  "https://d1vqfl8cu8qgdj.cloudfront.net/assets/video/Dhow%20Cruise%20Dinner%20Dubai%20-%20Rayna%20Tours.mp4";
 
 export interface NavItem {
   label: string;
@@ -25,10 +23,10 @@ export interface SlideItem {
 }
 
 export const SLIDES: SlideItem[] = [
-  { src: "/img/dhow-dinner-cruise-dubai.jpg", alt: "dhow dinner cruise" },
-  { src: "/img/dhow-cruise-dinner-dubai.jpg", alt: "dhow cruise dinner dubai" },
-  { src: "/img/dubai-dhow-cruise-marina.jpg", alt: "Dubai Dhow Cruise" },
-  { src: "/img/dhow-dinner-cruise.jpg", alt: "dhow cruise" },
+  { src: "/img/boat-26.jpg", alt: "Dhow cruise boat lit up at night on the water" },
+  { src: "/img/fulboat-19.jpg", alt: "Illuminated boat on the water at night" },
+  { src: "/img/hallview-28.jpg", alt: "Dining hall on board with set tables" },
+  { src: "/img/buffet-24.jpg", alt: "Buffet dinner served on board" },
 ];
 
 export interface WelcomeData {
@@ -232,8 +230,8 @@ export interface MenuBlock {
 }
 
 export const MENU_BLOCKS: MenuBlock[] = [
-  { title: "1. Dhow Cruise Creek Menu", pdf: `${CDN}/creek-menu.pdf` },
-  { title: "2. Dhow Cruise Marina Menu", pdf: `${CDN}/marina-menu.pdf` },
+  { title: "1. Dhow Cruise Creek Menu", pdf: "/menu" },
+  { title: "2. Dhow Cruise Marina Menu", pdf: "/menu" },
 ];
 
 export interface RouteItem {
