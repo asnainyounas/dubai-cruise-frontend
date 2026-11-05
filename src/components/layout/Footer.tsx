@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="dcontainer-fluid">
           <div className="top-footer-icon">
             <a href={`tel:+${WHATSAPP_NUMBER}`} className="top-footer-icon-block call-icon">
-              <span>{PHONE_DISPLAY}</span>
+              <span>+{WHATSAPP_NUMBER}</span>
             </a>
             <a
               href={waUrl}

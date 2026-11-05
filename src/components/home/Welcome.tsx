@@ -16,49 +16,50 @@ export default function Welcome() {
             <h1 className="herh">{WELCOME_DATA.titleHighlight}</h1>
           </div>
         </div>
-        <div className="drow">
+        <div className="wl-grid">
           <div
-            className="col-lg-5 col-md-5 col-sm-6 col-xs-12 aos-init"
+            className="wl-photo aos-init"
             data-aos="fade-right"
             style={{ transitionDuration: "2000ms" }}
           >
-            <div className="about-img">
-              <Image
-                src={WELCOME_DATA.image.src}
-                width={WELCOME_DATA.image.width}
-                height={WELCOME_DATA.image.height}
-                alt={WELCOME_DATA.image.alt}
-                style={{ width: "auto", height: "auto", maxWidth: "100%", maxHeight: "260px", objectFit: "contain" }}
-              />
-            </div>
+            <Image
+              src={WELCOME_DATA.image.src}
+              width={WELCOME_DATA.image.width}
+              height={WELCOME_DATA.image.height}
+              alt={WELCOME_DATA.image.alt}
+              style={{
+                width: "100%",
+                height: "auto",
+                aspectRatio: "16 / 10",
+                objectFit: "cover",
+                borderRadius: 12,
+              }}
+            />
           </div>
           <div
-            className="col-lg-7 col-md-7 col-sm-6 col-xs-12 about-col aos-init"
+            className="wl-text about-col aos-init"
             data-aos="fade-left"
             style={{ transitionDuration: "2000ms" }}
           >
             {WELCOME_DATA.introParagraphs.map((para, idx) => (
               <p key={idx}>{para}</p>
             ))}
-            <div>
+            <p>
               {WELCOME_DATA.adventureText.before}
-              <h2 className="conh2"> {WELCOME_DATA.adventureText.highlight} </h2>
+              <strong className="conh2">{WELCOME_DATA.adventureText.highlight}</strong>
               {WELCOME_DATA.adventureText.after}
-            </div>
+            </p>
             {expanded && (
-              <span>
+              <>
                 {WELCOME_DATA.expandedParagraphs.map((para, idx) => (
                   <p key={idx}>{para}</p>
                 ))}
                 <p>
-                  {WELCOME_DATA.bookingLink.prefix}
-                  <a href={WELCOME_DATA.bookingLink.url}>
-                    {" "}
-                    {WELCOME_DATA.bookingLink.text}
-                  </a>{" "}
+                  {WELCOME_DATA.bookingLink.prefix}{" "}
+                  <a href={WELCOME_DATA.bookingLink.url}>{WELCOME_DATA.bookingLink.text}</a>{" "}
                   {WELCOME_DATA.bookingLink.suffix}
                 </p>
-              </span>
+              </>
             )}
             <a
               className="main-link"

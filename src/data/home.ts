@@ -1,4 +1,3 @@
-export const CDN = "https://d1vqfl8cu8qgdj.cloudfront.net/assets/Dhowcruise";
 export const WA_BASE = "https://api.whatsapp.com/send?phone=+971565481752&text=Hello_";
 
 export interface NavItem {
@@ -54,32 +53,32 @@ export interface WelcomeData {
 }
 
 export const WELCOME_DATA: WelcomeData = {
-  titlePrefix: "Welcome to the",
-  titleHighlight: "Dhow Cruise Dubai",
+  titlePrefix: "Welcome aboard",
+  titleHighlight: "Dubai Dhow Cruises",
   image: {
-    src: "/img/rayna-tripadvisor.jpg",
-    alt: "Tripadvisor logo",
-    width: 460,
-    height: 260,
+    src: "/img/boat-5.jpg",
+    alt: "A dhow lit up at night on the water",
+    width: 640,
+    height: 400,
   },
   introParagraphs: [
-    "Dhow Cruise Dubai exposes you to the “other side” of Dubai’s highly gripping and eye-popping enchantment, asides breathtaking skyscrapers and luxurious shopping venues.",
-    "Don’t miss the opportunity to tour Dubai dhow cruise with us, whether you want to explore the old Dubai Creek or encounter the ultramodern episodes of dhow dinner cruise Dubai Marina.",
+    "Dubai looks different from the water. On a dhow cruise you leave the traffic behind and see the city lit up from a quiet, slow-moving boat.",
+    "We offer two cruises: a Dubai Marina cruise with sunset and dinner sailings, and a Dubai Creek cruise through the older part of the city. Both last two hours and include a buffet dinner, live shows and music on board.",
   ],
   adventureText: {
-    before: "Are you an enthusiast of nature and adventure? Musandam Dibba is our incredible ",
-    highlight: "dhow cruise in Dubai",
-    after: " which surprises you on every nautical mile.",
+    before: "Not sure which one to pick? Choose the ",
+    highlight: "Dubai Marina cruise",
+    after: " for the glowing skyline and the Marina canal, or the Creek cruise for the older side of the city.",
   },
   expandedParagraphs: [
-    "Cruising in Dubai is an ‘abode on water’ experience with every minute detail of your sail paid attention to with our bespoke and sophisticate services. If you’re looking to make the night special on your special event or romantic escape, there is nothing better than dhow cruise Dubai at night. Tour Dubai dhow dinner cruise for an exceptional breakout with colourful belly dancing or the dervish traditional Tanoura dance to spice it up!",
-    "Worried about dhow cruise Dubai price? Don’t be...because we can cater to your individual as well as larger group needs without going hard on your wallet and without compromising on the service quality. You’ll be amazed while enjoying the range of our sumptuous and palatable offerings serviced at an attractive dhow cruise with dinner price.",
+    "On the Marina cruise you sail along the Dubai Marina canal, past the Marina skyscrapers, Dubai Marina Mall and Pier 7, and the twisted tower, with views of Jumeirah Beach and Ain Dubai. Pick a sunset sailing in the early evening or a dinner sailing later at night.",
+    "On the Creek cruise you pass heritage landmarks such as the Spice Souk, the Bur Dubai bazaar, Dubai Museum and the Dubai Heritage Center and Village, with Al Maktoum Bridge and Infinity Bridge along the way.",
   ],
   bookingLink: {
-    prefix: "Get the most happening and fascinating ",
-    text: "dhow cruise in Dubai",
-    suffix: " We promise to make the dhow cruise Dubai worth repeating again.",
-    url: "/book",
+    prefix: "Ready to go? Message us on WhatsApp at +971558479933 or",
+    text: "see our cruises",
+    suffix: "to choose one. Bookings are confirmed on WhatsApp.",
+    url: "/#packages",
   },
 };
 
@@ -107,7 +106,7 @@ export const PACKAGES: PackageItem[] = [
     title: "Dhow Cruise Creek",
     slug: "creek-cruise",
     duration: "Duration : 2 hours",
-    text: "A trip down the historic creek on our wooden dhow with Arabian-inspired setting is one of the most splendid things to enjoy during Dubai vacation. Offers you a relaxing experience",
+    text: "Two hours on Dubai Creek with a buffet dinner, five live shows and music, passing the Spice Souk and other heritage landmarks.",
     book: "/book?tour=creek-cruise",
     wa: "Dhow%20Cruise%20Creek",
     href: "/cruises/creek-cruise",
@@ -145,7 +144,7 @@ export const PACKAGES: PackageItem[] = [
     title: "Dhow Cruise Marina",
     slug: "dubai-marina-cruise",
     duration: "Duration : 2 hours",
-    text: "Join us for an outstanding cruising experience that is not to be missed in Dubai! Our two-hour cruise is a wonderful way to relax and views of Dubai's skyline.",
+    text: "Two hours on the Dubai Marina canal with a buffet dinner, live shows and music. Choose a sunset sailing or a dinner sailing.",
     book: "/book?tour=dubai-marina-cruise",
     wa: "Dhow%20Cruise%20Marina",
     href: "/cruises/dubai-marina-cruise",
@@ -183,7 +182,7 @@ export const PACKAGES: PackageItem[] = [
     title: "Dhow Cruise - Dubai City Tour",
     slug: "dhow-cruise-dubai-city-tour",
     duration: "Duration : 4 hours",
-    text: "When vacationing in Dubai, be sure to include all attractions and activities that allow you to experience this incredible city at its best. We, dhowcruiseindubai.com, take care of your holiday needs.",
+     text: "A Dubai city sightseeing tour combined with a dhow cruise.",
     book: "/book?tour=dhow-cruise-dubai-city-tour",
     wa: "Dhow%20Cruise%20-%20Dubai%20City%20Tour",
     hasPage: false,
@@ -257,85 +256,71 @@ export interface FaqItemData {
 
 export const FAQS_MAIN: FaqItemData[] = [
   {
-    q: "What are the best Dhow Cruises in Dubai?",
-    a: "There are mainly two types of dhow cruises in Dubai: Dhow Cruise Creek and Dhow Cruise Marina. Between these two, the dhow cruise Marina is the most popular, as the Marina area is considered to be the most modern and the most happening area. Moreover, it is also promoted the most by the tour providers. On the other hand, the dhow cruise on Dubai Creek gives you the glimpse of the old side of the city. In short, you can book a cruise depending on your preferences and what you want to see.",
+    q: "What dhow cruises do you offer?",
+    a: "We offer a Dubai Marina cruise with sunset and dinner sailings, and a Dubai Creek cruise. Both cruises last two hours.",
   },
   {
-    q: "What are the activities in dhow cruise Dubai?",
-    a: "The dhow cruise experience is designed to ensure that the guests have a memorable time. As guests enter the dhow, they are welcomed with soulful music and delicious welcome drinks. As the dhow starts sailing, the guests are treated with scrumptious buffet dinner that includes both local and international delicacies. Live entertainment show in the form of Tanoura dance are also available to the guests. They are also free to visit the upper deck to enjoy the view of the surroundings.",
+    q: "What is the difference between the Creek and Marina cruises?",
+    a: "The Marina cruise sails along the Dubai Marina canal among modern towers, while the Creek cruise sails along Dubai Creek past heritage landmarks such as the Spice Souk and the Bur Dubai bazaar. Both include a buffet dinner, live shows and music.",
   },
   {
-    q: "How to Reach Dhow Cruise Dubai?",
-    a: "You can opt for transportation at the time of booking. www.dhowcruiseindubai.com offers pickup and drop off services to those who require it. On the other hand, you can also reach the departure point in your own vehicle or via public transportation.",
+    q: "What is included in the cruise?",
+    a: "The Marina cruise includes two hours of cruising, welcome drinks, an international buffet dinner, unlimited soft beverages, live entertainment shows, music on board, and separate facilities for men and women. The Creek cruise includes two hours of cruising, a buffet dinner, five live shows and music on board.",
   },
   {
-    q: "What Should I Wear on Dhow Cruise Dubai?",
-    a: "Formals and smart casuals are acceptable dress code during dhow cruise. Men and women should avoid wearing shorts. Short skirts and sleeveless dresses are also a no-no. Slippers and flip-flops are also not acceptable.",
+    q: "What are the Marina cruise sailing times?",
+    a: "The sunset sailing starts boarding at 5:30 pm and cruises from 6:00 pm to 8:00 pm. The dinner sailing starts boarding at 8:30 pm and cruises from 9:00 pm to 11:00 pm.",
   },
   {
-    q: "What is the difference between Dhow Cruise Creek and Marina Dhow Cruise?",
-    a: "The only difference between a dhow cruise Creek and Marina dhow cruise is the venue and the sights you get to see. However, the entire dhow cruise experience is the same in both cruises.",
+    q: "Where does the Creek cruise start?",
+    a: "The Creek cruise leaves from Baniyas Road, on the Creek side, opposite the Rolex twin towers. You can park at P3, and the nearest metro station is Union (Exit 1).",
   },
   {
-    q: "What is Included in Dhow Cruise Dinner Menu?",
-    a: "The dhow cruise dinner menu includes a three-course meal, i.e. starters, main course and desserts. Starters include soup, salads, dips and dressings, and kebabs. The main course includes a combination of local and international dishes. The desert menu also offers different options.",
+    q: "How do I book?",
+    a: "Use the booking box on a cruise page, or message us on WhatsApp at +971558479933. Bookings are confirmed on WhatsApp.",
   },
   {
-    q: "How to Book Dhow Cruise Dubai?",
-    a: "Online booking is the best way to book a dhow cruise in Dubai. To book with dhowcruiseindubai.com, you can visit the website and enquire about the package you are interested in. You would get a reply through email or SMS and book your tickets and make the payment as well. The best part of online booking is that you are likely to get some discounts and deals as well.",
+    q: "How much does a cruise cost?",
+    a: "Prices: TODO: add real details",
   },
 ];
 
 export const FAQS_EXTRA: FaqItemData[] = [
   {
-    q: "What is the best time to visit dhow cruise Dubai ?",
-    a: "The dhow cruise dinner happens in the evening, when the temperature of the city is cooler. So, dhow cruise is a great option throughout the year. However, if the heat of the city is unbearable to you, especially in the summer, you can book a table in the fully air-conditioned lower deck of the dhow. Also, avoid booking a dhow cruise during the month of Ramadan, as no drinks are served, and there are no entertainment performances onboard during this month.",
+    q: "What shows are on board?",
+    a: "The Marina cruise has a Tanura show, a drum show and a puppet show. The Creek cruise has five shows: Tanura dance, puppet dance, horse dance, Sufi dance and an Egyptian lights Tanura show.",
   },
   {
-    q: "Where is dhow cruise creek located?",
-    a: "Dubai Creek is located between Bur Dubai and Deira. It is in the old part of the city.",
+    q: "What can I see on the Marina cruise?",
+    a: "You pass the Marina skyscrapers, the Dubai Marina canal, Dubai Marina Mall and Pier 7, the twisted tower on the canal, and Jumeirah Beach, with views towards Ain Dubai.",
   },
   {
-    q: "I am vegetarian, is there veg food also available in Dhow Cruise Dubai?",
-    a: "Yes, vegetarian food is available on dhow cruise Dubai. Do mention your food preferences at the time of booking.",
+    q: "What can I see on the Creek cruise?",
+    a: "You pass places such as the Spice Souk, the Bur Dubai bazaar, Dubai Museum, the Dubai Heritage Center and Village, Al Maktoum Bridge, the Al Bastakia district and Infinity Bridge.",
   },
   {
-    q: "Can I book Dhow Cruise Dubai for private party?",
-    a: "Yes, you can book an entire dhow cruise for a few hours for a private party. You can contact us to know all the details about the same.",
+    q: "What does the menu include?",
+    a: "You can see the premium menu on our menu page.",
   },
   {
-    q: "Are drinks served free of charges?",
-    a: "A welcome drink is included in the dhow cruise package. All other drinks, both alcoholic and non-alcoholic, would be charged.",
+    q: "Is hotel pick-up and drop-off available?",
+    a: "Pick-up and drop-off details: TODO: add real details",
   },
   {
-    q: "Do we get pick and drop facility?",
-    a: "Yes, we can arrange pickup and drop off for you. Kindly inform whether you need pick up and drop off at the time of booking.",
+    q: "Is there a dress code?",
+    a: "Dress code: TODO: add real details",
   },
   {
-    q: "Which is better creek or marina?",
-    a: "There is no right answer for this question. The answer would depend on your preferences. If you want to see the modern and glamorous Dubai, head to Dubai Marina. On the other hand, if you want to see the old charm of the city, head to Dubai Creek.",
+    q: "Can I change or cancel my booking?",
+    a: "Change and cancellation policy: TODO: add real details",
   },
   {
-    q: "What is Musandam Dibba Tour?",
-    a: "The Musandam Dibba tour is a dhow cruise tour on the Mussandam Peninsula in Oman. It is a five hours trip from Dubai and includes buffet lunch and some interesting activities like snorkeling, swimming, banana boat riding, etc.",
-  },
-  {
-    q: "What are the days of operation for the Dhow Dinner Cruise?",
-    a: "The dhow dinner cruise is available 7 days a week and 365 days a year.",
-  },
-  {
-    q: "What is dhow cruise dinner?",
-    a: "Dhow cruises are traditional dhows turned into restaurants. They are popular tourist attractions in Dubai and usually happen at Dubai Creek and Dubai Marina. A 2-3 hours dhow cruise dinner includes a relaxing dinner, entertainment and sightseeing as well.",
-  },
-  {
-    q: "What is the capacity of dhow cruise ?",
-    a: "The dhow has an upper and lower deck and can hold 200 people.",
-  },
-  {
-    q: "Is photography allowed at dhow cruise?",
-    a: "Yes, photography is allowed.",
+    q: "Can children join the cruise?",
+    a: "Children's details: TODO: add real details",
   },
 ];
+
+
 
 export interface FooterLink {
   label: string;

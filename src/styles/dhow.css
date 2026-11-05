@@ -34,7 +34,7 @@
   --dark: #262523;
   --cream: #f7f0e6;
   --linkblue: #21a1d2;
-  --icons: url(https://d1vqfl8cu8qgdj.cloudfront.net/assets/Dhowcruise/img/dhow-cruise-icons.svg);
+    --icons: url(/img/dhow-cruise-icons.svg);
 }
 
 * {
@@ -582,7 +582,8 @@ button {
   padding-left: 25px;
 }
 .dhow-menu-block {
-  background-image: url(https://d1vqfl8cu8qgdj.cloudfront.net/assets/Dhowcruise/img/our-menu.jpg);
+  background-image: none;
+  background-color: #f1ece4;
   padding: 60px;
   border-radius: 7px;
   background-size: cover;
@@ -631,8 +632,7 @@ button {
 /* ---------- routes ---------- */
 
 .dhowcruise-route {
-  background-image: url(https://d1vqfl8cu8qgdj.cloudfront.net/assets/Dhowcruise/img/bg-map.jpg);
-  background-size: cover;
+  background-image: linear-gradient(135deg, #1b2330, #2a3548);
   background-position: center;
   padding: 70px 0;
   margin-bottom: 50px;
@@ -976,10 +976,10 @@ button {
 /* ---------- responsive ---------- */
 
 @media (max-width: 1000px) {
-  .ms-item {
-    margin: 0;
-    transform: scale(0.9);
-  }
+ .ms-item {
+  margin: 0 10px;
+  transform: scale(0.9);
+}
   .video-modal-dialog {
     width: 100%;
   }
@@ -1777,4 +1777,41 @@ button {
   font-size: 22px;
   font-weight: 700;
   line-height: 1.3;
+}
+
+/* ---- Welcome section layout ---- */
+.wl-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .wl-grid {
+    grid-template-columns: 5fr 7fr;
+    gap: 40px;
+  }
+}
+.wl-photo {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.wl-text p {
+  margin: 0 0 14px;
+  line-height: 1.6;
+}
+.wl-text .main-link {
+  display: inline-block;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.top-footer-icon-block.call-icon span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
