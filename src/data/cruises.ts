@@ -53,7 +53,7 @@ const img = (url: string, alt: string): CruiseImage => ({ url, alt });
 const pickup = (extra: number) =>
   `Pick-up and drop-off can be arranged for an extra ${aed(extra)} per person. Ask us on WhatsApp whether your area is covered.`;
 const CHANGE_POLICY = "You can change or cancel your booking up to 4 hours before the cruise.";
-const CHILDREN = "Yes. There is no age limit for children, and children under 3 travel free.";
+const CHILDREN = "Yes. There is no age limit for children. Children under 3 travel free, and children aged 3 and over pay for a ticket.";
 const NO_DRESS_CODE = "There is no special dress code.";
 
 const MARINA_TIMES = `Sunset sailing: boarding at ${SAILINGS.marinaEarly.boarding}, cruising from ${SAILINGS.marinaEarly.cruise}. Dinner sailing: boarding at ${SAILINGS.marinaLate.boarding}, cruising from ${SAILINGS.marinaLate.cruise}.`;

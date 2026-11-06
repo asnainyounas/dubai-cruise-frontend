@@ -317,7 +317,7 @@ export const FAQS_EXTRA: FaqItemData[] = [
   },
   {
     q: "Can children join the cruise?",
-    a: "Yes. There is no age limit for children, and children under 3 travel free.",
+       a: "Yes. There is no age limit for children. Children under 3 travel free, and children aged 3 and over pay for a ticket.",
   },
 ];
 
