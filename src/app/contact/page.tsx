@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
+import { BUSINESS } from "@/data/business";
+import { SAILINGS } from "@/data/business";
+import { CRUISES } from "@/data/cruises";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Contact us on WhatsApp to ask about our dhow cruises or to confirm a booking.",
+  description:
+    "Contact us on WhatsApp or by email to ask about our Dubai Marina and Dubai Creek dinner cruises or to confirm a booking.",
   alternates: { canonical: "/contact" },
-  // Placeholder page: remove this line when the TODO details are filled in.
-  robots: { index: false, follow: false },
 };
 
-const WHATSAPP_NUMBER = "971558479933";
-const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+const waUrl = `https://wa.me/${BUSINESS.whatsappNumber}?text=${encodeURIComponent(
   "Hello, I have a question about a dhow cruise"
 )}`;
+
+const marinaMap = CRUISES["dubai-marina-cruise"].mapUrl;
+const creekMap = CRUISES["creek-cruise"].mapUrl;
+
+const linkStyle = { color: "var(--linkblue)", textDecoration: "underline" } as const;
 
 export default function ContactPage() {
   return (
@@ -35,10 +41,41 @@ export default function ContactPage() {
         <section className="cruise-section-block">
           <h2 className="cruise-section-heading">Our details</h2>
           <ul className="cruise-why-list">
-            <li>WhatsApp: +971558479933</li>
-            <li>Email: TODO: add real details</li>
-            <li>Address: TODO: add real details</li>
-            <li>Opening hours: TODO: add real details</li>
+            <li>WhatsApp: {BUSINESS.whatsappDisplay}</li>
+            <li>
+              Email:{" "}
+              <a href={`mailto:${BUSINESS.email}`} style={linkStyle}>
+                {BUSINESS.email}
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section className="cruise-section-block">
+          <h2 className="cruise-section-heading">Where to find us</h2>
+          <ul className="cruise-why-list">
+            <li>
+              Dubai Marina cruise: Dubai Marina Harbour, Gate No. 3 (P1-AA-AB).{" "}
+              <a href={marinaMap} target="_blank" rel="noopener noreferrer" style={linkStyle}>
+                View on map
+              </a>
+            </li>
+            <li>
+              Dubai Creek cruise: Baniyas Road, Creek side, opposite the Rolex twin towers. Parking at P3,
+              nearest metro Union (Exit 1).{" "}
+              <a href={creekMap} target="_blank" rel="noopener noreferrer" style={linkStyle}>
+                View on map
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section className="cruise-section-block">
+          <h2 className="cruise-section-heading">Cruise times</h2>
+          <ul className="cruise-why-list">
+            <li>Marina early sailing: {SAILINGS.marinaEarly.cruise}</li>
+            <li>Marina dinner sailing: {SAILINGS.marinaLate.cruise}</li>
+            <li>Creek cruise: {SAILINGS.creek.cruise}</li>
           </ul>
         </section>
       </div>

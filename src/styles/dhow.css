@@ -1747,7 +1747,7 @@ button {
 .nav-ul li a.nav-active::before {
   content: "";
   position: absolute;
-  inset: -8px -14px;
+    inset: -4px -12px;
   background: #f26b21;
   border-radius: 8px;
   z-index: -1;
@@ -1814,4 +1814,14 @@ button {
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+/* Hide the focus ring after a mouse click, but keep it for keyboard users */
+.nav-ul li a:focus {
+  outline: none;
+}
+.nav-ul li a:focus-visible {
+  outline: 2px solid #f26b21;
+  outline-offset: 4px;
+  border-radius: 4px;
 }

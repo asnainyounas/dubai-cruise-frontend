@@ -1,3 +1,4 @@
+import { CURRENCY, PICKUP_EXTRA, PRICE, SAILINGS } from "./business";
 export const WA_BASE = "https://api.whatsapp.com/send?phone=+971565481752&text=Hello_";
 
 export interface NavItem {
@@ -140,13 +141,13 @@ export const PACKAGES: PackageItem[] = [
     col: 2,
     big: true,
     img: "dhow-cruise-marina-small.jpg",
-    alt: "Dhow Cruise Marina",
-    title: "Dhow Cruise Marina",
+    alt: "Dubai Marina Dinner Cruise",
+    title: "Dubai Marina Dinner Cruise",
     slug: "dubai-marina-cruise",
     duration: "Duration : 2 hours",
     text: "Two hours on the Dubai Marina canal with a buffet dinner, live shows and music. Choose a sunset sailing or a dinner sailing.",
     book: "/book?tour=dubai-marina-cruise",
-    wa: "Dhow%20Cruise%20Marina",
+   wa: "Dubai%20Marina%20Dinner%20Cruise",
     href: "/cruises/dubai-marina-cruise",
     hasPage: true,
   },
@@ -211,15 +212,15 @@ export interface MenuItem {
 export const MENUS: MenuItem[] = [
   {
     heading: "Dhow Cruise Creek",
-    departure: "Departure Time : TODO: add real details",
+    departure: `Departure Time : ${SAILINGS.creek.start} (boarding ${SAILINGS.creek.boarding})`,
     duration: "Duration : 2 Hours",
-    price: "Price : TODO: add real details",
+    price: `Price : ${PRICE.creek} ${CURRENCY} per person`,
   },
   {
-    heading: "Dhow Cruise Marina",
-    departure: "Departure Time : Sunset 6:00 PM, Dinner 9:00 PM",
+    heading: "Dubai Marina Dinner Cruise",
+    departure: `Departure Time : Sunset ${SAILINGS.marinaEarly.start}, Dinner ${SAILINGS.marinaLate.start}`,
     duration: "Duration : 2 Hours",
-    price: "Price : TODO: add real details",
+    price: `Price : ${PRICE.marinaEarly} ${CURRENCY} (sunset), ${PRICE.marinaLate} ${CURRENCY} (dinner) per person`,
   },
 ];
 
@@ -256,32 +257,32 @@ export interface FaqItemData {
 
 export const FAQS_MAIN: FaqItemData[] = [
   {
-    q: "What dhow cruises do you offer?",
-    a: "We offer a Dubai Marina cruise with sunset and dinner sailings, and a Dubai Creek cruise. Both cruises last two hours.",
+    q: "What cruises do you offer?",
+    a: "We offer a Dubai Marina dinner cruise with sunset and dinner sailings, and a Dubai Creek dhow cruise. Both cruises last two hours.",
   },
   {
     q: "What is the difference between the Creek and Marina cruises?",
-    a: "The Marina cruise sails along the Dubai Marina canal among modern towers, while the Creek cruise sails along Dubai Creek past heritage landmarks such as the Spice Souk and the Bur Dubai bazaar. Both include a buffet dinner, live shows and music.",
+    a: "The Marina cruise sails along the Dubai Marina canal among modern towers, while the Creek cruise sails along Dubai Creek past heritage landmarks such as the Spice Souk and the Bur Dubai Bazaar. Both include a buffet dinner, live shows and music.",
+  },
+  {
+    q: "How much does a cruise cost?",
+    a: `The Creek cruise costs ${PRICE.creek} ${CURRENCY} per person. The Marina sunset sailing costs ${PRICE.marinaEarly} ${CURRENCY} per person and the Marina dinner sailing costs ${PRICE.marinaLate} ${CURRENCY} per person. Children under 3 travel free.`,
   },
   {
     q: "What is included in the cruise?",
-    a: "The Marina cruise includes two hours of cruising, welcome drinks, an international buffet dinner, unlimited soft beverages, live entertainment shows, music on board, and separate facilities for men and women. The Creek cruise includes two hours of cruising, a buffet dinner, five live shows and music on board.",
+    a: "The Marina cruise includes two hours of cruising, welcome drinks, an international buffet dinner, unlimited soft beverages, live entertainment shows, music on board, and separate facilities for men and women. The Creek cruise includes two hours of cruising, a buffet dinner, five live shows, music on board and free soft drinks.",
   },
   {
-    q: "What are the Marina cruise sailing times?",
-    a: "The sunset sailing starts boarding at 5:30 pm and cruises from 6:00 pm to 8:00 pm. The dinner sailing starts boarding at 8:30 pm and cruises from 9:00 pm to 11:00 pm.",
+    q: "What are the sailing times?",
+    a: `Marina sunset sailing: boarding at ${SAILINGS.marinaEarly.boarding}, cruising from ${SAILINGS.marinaEarly.cruise}. Marina dinner sailing: boarding at ${SAILINGS.marinaLate.boarding}, cruising from ${SAILINGS.marinaLate.cruise}. Creek cruise: boarding at ${SAILINGS.creek.boarding}, cruising normally from ${SAILINGS.creek.cruise}.`,
   },
   {
-    q: "Where does the Creek cruise start?",
-    a: "The Creek cruise leaves from Baniyas Road, on the Creek side, opposite the Rolex twin towers. You can park at P3, and the nearest metro station is Union (Exit 1).",
+    q: "Where do the cruises start?",
+    a: "The Marina cruise leaves from Dubai Marina Harbour, Gate No. 3. The Creek cruise leaves from Baniyas Road, on the Creek side, opposite the Rolex twin towers, with parking at P3 and Union metro station (Exit 1) nearby.",
   },
   {
     q: "How do I book?",
     a: "Use the booking box on a cruise page, or message us on WhatsApp at +971558479933. Bookings are confirmed on WhatsApp.",
-  },
-  {
-    q: "How much does a cruise cost?",
-    a: "Prices: TODO: add real details",
   },
 ];
 
@@ -296,27 +297,27 @@ export const FAQS_EXTRA: FaqItemData[] = [
   },
   {
     q: "What can I see on the Creek cruise?",
-    a: "You pass places such as the Spice Souk, the Bur Dubai bazaar, Dubai Museum, the Dubai Heritage Center and Village, Al Maktoum Bridge, the Al Bastakia district and Infinity Bridge.",
+    a: "You pass places such as the Spice Souk, the Bur Dubai Bazaar, Dubai Museum, the Dubai Heritage Center and Village, Al Maktoum Bridge, the Al Bastakia District, Infinity Bridge and Palm Deira.",
   },
   {
     q: "What does the menu include?",
     a: "You can see the premium menu on our menu page.",
   },
   {
-    q: "Is hotel pick-up and drop-off available?",
-    a: "Pick-up and drop-off details: TODO: add real details",
+    q: "Is pick-up and drop-off available?",
+    a: `Yes, it can be arranged for an extra ${PICKUP_EXTRA.marina} ${CURRENCY} per person on the Marina cruise and ${PICKUP_EXTRA.creek} ${CURRENCY} per person on the Creek cruise. Ask us on WhatsApp whether your area is covered.`,
   },
   {
     q: "Is there a dress code?",
-    a: "Dress code: TODO: add real details",
+    a: "There is no special dress code.",
   },
   {
     q: "Can I change or cancel my booking?",
-    a: "Change and cancellation policy: TODO: add real details",
+    a: "Yes. You can change or cancel your booking up to 4 hours before the cruise.",
   },
   {
     q: "Can children join the cruise?",
-    a: "Children's details: TODO: add real details",
+    a: "Yes. There is no age limit for children, and children under 3 travel free.",
   },
 ];
 
