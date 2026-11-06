@@ -1,14 +1,12 @@
 "use client";
-
+import Logo from "./Logo"
 import { useState } from "react";
-import Image from "next/image";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_ITEMS } from "@/data/nav";
 
-// To change the logo: put the file in public/img and change this one line.
-// (This is still the original site's logo until your friend sends his own.)
-const LOGO_SRC = "/img/logo.png";
+
 const WHATSAPP_NUMBER = "971558479933";
 const WHATSAPP_LABEL = "+971 55 847 9933";
 
@@ -26,7 +24,7 @@ export default function Header() {
       <nav>
         <div className="top-header">
           <Link className="navbar-brand" href="/">
-            <Image src={LOGO_SRC} width={360} height={96} alt="Dhow Cruise in Dubai Logo" priority />
+            <Logo className="site-logo" />
           </Link>
           <div className="top-header-right">
             <ul className="top-contact-ul">

@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { FOOTER_LINKS } from "@/data/nav";
 import ScrollToTop from "./ScrollToTop";
-
+import { BUSINESS } from "@/data/business";
 // ---- Business details: edit these here, nothing else in this file needs changing ----
-const BUSINESS_NAME = "TODO: add business name";
-const WHATSAPP_NUMBER = "971558479933";
-const PHONE_DISPLAY = "+971 55 847 9933";
-const EMAIL = ""; // add the business email, for example "info@example.com". Empty = no email icon.
-// Social links: add one entry per account, for example
-// { label: "Facebook", href: "https://www.facebook.com/yourpage", className: "facebook" }
+const BUSINESS_NAME = BUSINESS.name;
+const WHATSAPP_NUMBER = BUSINESS.whatsappNumber;
+const EMAIL = BUSINESS.email;
+
 const SOCIAL_LINKS: { label: string; href: string; className: "facebook" | "twitter" }[] = [];
 
 const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(

@@ -1825,3 +1825,31 @@ button {
   outline-offset: 4px;
   border-radius: 4px;
 }
+
+.site-logo {
+  display: block;
+  height: 64px;
+  width: auto;
+}
+@media (max-width: 991px) {
+  .site-logo {
+    height: 52px;
+  }
+}
+
+/* Mobile menu button: no orange box, black lines */
+.navbar-toggle {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.navbar-toggle span {
+  background: #000 !important;
+}
+.navbar-toggle:focus {
+  outline: none;
+}
+.navbar-toggle:focus-visible {
+  outline: 2px solid #f26b21;
+  outline-offset: 2px;
+}
