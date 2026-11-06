@@ -1,3 +1,4 @@
+import { Outfit } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
@@ -5,6 +6,12 @@ import Footer from "@/components/layout/Footer";
 import AosInitializer from "@/components/home/AosInitializer";
 import { BUSINESS, CURRENCY, PRICE } from "@/data/business";
 
+const mainFont = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  display: "swap",
+  variable: "--font-main",
+});
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 const TITLE = `Dhow Cruise Dubai from ${PRICE.creek} ${CURRENCY} | Marina and Creek Dinner Cruises`;
@@ -42,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={mainFont.variable}>
       <body>
         <div id="top">
           <Header />

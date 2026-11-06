@@ -3,27 +3,6 @@
    Plain CSS matched to the reference design (desktop first).
    ============================================================ */
 
-@font-face {
-  font-family: "GT Eesti Pro Display";
-  src: url(https://d1vqfl8cu8qgdj.cloudfront.net/assets/fonts/gteesti/GT-Eesti-Pro-Display-Light.woff2) format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "GT Eesti Pro Display";
-  src: url(https://d1vqfl8cu8qgdj.cloudfront.net/assets/fonts/gteesti/GT-Eesti-Pro-Display-Regular.woff2) format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "GT Eesti Pro Display";
-  src: url(https://d1vqfl8cu8qgdj.cloudfront.net/assets/Dhowcruise/fonts/GTEestiProDisplayBold2.woff2) format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 
 :root {
   --orange: #ff7043;
@@ -43,7 +22,7 @@
 
 body {
   margin: 0;
-  font-family: "GT Eesti Pro Display", sans-serif;
+    font-family: var(--font-main), sans-serif;
   font-size: 15px;
   color: #333;
   background: #fff;
