@@ -2,7 +2,7 @@
 // Cruise detail data shaped to match Dubai-cruise-backend/src/models/Cruise.js
 // Business facts (prices, times, contact) live in ./business.ts. Change them there.
 
-import { BUSINESS, CURRENCY, PICKUP_EXTRA, PRICE, SAILINGS } from "./business";
+import { BUSINESS, CARD_FEE_PERCENT, CURRENCY, MAPS, PICKUP_EXTRA, PRICE, SAILINGS } from "./business";
 
 export interface CruiseImage {
   url: string;
@@ -56,6 +56,8 @@ const CHANGE_POLICY = "You can change or cancel your booking up to 4 hours befor
 const CHILDREN = "Yes. There is no age limit for children. Children under 3 travel free, and children aged 3 and over pay for a ticket.";
 const NO_DRESS_CODE = "There is no special dress code.";
 
+const PAYMENT = `You can pay by cash, by card or by payment link, and a deposit can be arranged. If you pay by card, ${CARD_FEE_PERCENT}% is added to the total amount. Ask us on WhatsApp for the details.`;
+
 const MARINA_TIMES = `Sunset sailing: boarding at ${SAILINGS.marinaEarly.boarding}, cruising from ${SAILINGS.marinaEarly.cruise}. Dinner sailing: boarding at ${SAILINGS.marinaLate.boarding}, cruising from ${SAILINGS.marinaLate.cruise}.`;
 const MARINA_PRICES = `The sunset sailing costs ${aed(PRICE.marinaEarly)} per person and the dinner sailing costs ${aed(PRICE.marinaLate)} per person. Children under 3 travel free.`;
 const MARINA_SIGHTS =
@@ -83,7 +85,7 @@ export const CRUISES: Record<string, CruiseData> = {
     adultPrice: PRICE.creek,
     currency: CURRENCY,
     startingPrice: `From ${aed(PRICE.creek)} per person`,
-    mapUrl: "https://maps.app.goo.gl/jpCx4gMWfvvK8o8b6",
+    mapUrl: MAPS.creek,
     seoTitle: `Dhow Cruise Creek Dubai from ${aed(PRICE.creek)} | Dinner and Shows`,
     seoDescription: `Two-hour dhow dinner cruise on Dubai Creek with a buffet dinner, five live shows and music, from ${aed(PRICE.creek)} per person. Book on WhatsApp.`,
     heroImage: img("/img/hallview-28.jpg", "Dining hall on the Dubai Creek dhow cruise"),
@@ -151,7 +153,7 @@ export const CRUISES: Record<string, CruiseData> = {
       { question: "Is there a dress code?", answer: NO_DRESS_CODE },
       { question: "Can I change or cancel my booking?", answer: CHANGE_POLICY },
       { question: "Can children join the cruise?", answer: CHILDREN },
-      { question: "How do I pay?", answer: `Payment details: ${TODO}` },
+      { question: "How do I pay?", answer: PAYMENT },
       {
         question: "How can I confirm my booking?",
         answer: `Bookings are confirmed on WhatsApp ${WA}.`,
@@ -172,7 +174,7 @@ export const CRUISES: Record<string, CruiseData> = {
     adultPrice: PRICE.marinaEarly,
     currency: CURRENCY,
     startingPrice: `From ${aed(PRICE.marinaEarly)} per person`,
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Dubai+Harbour+Gate+No+3+34VQ%2BP2+Dubai",
+    mapUrl: MAPS.marina,
     seoTitle: `Dubai Marina Dinner Cruise from ${aed(PRICE.marinaEarly)} | Buffet and Shows`,
     seoDescription: `Two-hour dinner cruise on Dubai Marina with a buffet dinner, live shows and music. Sunset and dinner sailings from ${aed(PRICE.marinaEarly)} per person. Book on WhatsApp.`,
     heroImage: img("/img/boat-4.jpg", "Dubai Marina dinner cruise boat lit up at night"),
@@ -190,7 +192,7 @@ export const CRUISES: Record<string, CruiseData> = {
     whatToExpect: [
       `${MARINA_TIMES} ${MARINA_PRICES}`,
       MARINA_SIGHTS,
-      "Where to find us: Dubai Marina Harbour, Gate No. 3 (P1-AA-AB). Use the departure location link on this page to find it.",
+      "Where to find us: Dubai Marina Harbour, Gate No. 3 (P1-AA-AB). Parking is in front of the boat. Use the departure location link on this page to find it.",
       pickup(PICKUP_EXTRA.marina),
     ],
     foodAndEntertainment: [
@@ -225,7 +227,7 @@ export const CRUISES: Record<string, CruiseData> = {
       {
         question: "Where does the Dubai Marina cruise depart from?",
         answer:
-          "Dubai Marina Harbour, Gate No. 3 (P1-AA-AB). Use the departure location link on this page to find it.",
+          "Dubai Marina Harbour, Gate No. 3 (P1-AA-AB). Parking is in front of the boat. Use the departure location link on this page to find it.",
       },
       { question: "What sailing times are available?", answer: MARINA_TIMES },
       { question: "How much does the cruise cost?", answer: MARINA_PRICES },
@@ -241,7 +243,7 @@ export const CRUISES: Record<string, CruiseData> = {
       { question: "Is there a dress code?", answer: NO_DRESS_CODE },
       { question: "Can I change or cancel my booking?", answer: CHANGE_POLICY },
       { question: "Can children join the cruise?", answer: CHILDREN },
-      { question: "How do I pay?", answer: `Payment details: ${TODO}` },
+      { question: "How do I pay?", answer: PAYMENT },
       {
         question: "How can I confirm my booking?",
         answer: `Bookings are confirmed on WhatsApp ${WA}.`,

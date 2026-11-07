@@ -31,3 +31,17 @@ export const SAILINGS = {
   marinaLate: { boarding: "8:30 pm", cruise: "9:00 pm to 11:00 pm", start: "9:00 PM" },
   creek: { boarding: "8:30 pm", cruise: "9:00 pm to 11:00 pm", start: "9:00 PM" },
 };
+
+export const OFFICE = {
+  name: "Universal Travel", // CONFIRM this is the name he wants shown
+  address: "Shop No. 2, Hassan Abdullah Building, near Emirates NBD bank, Al Satwa, Dubai",
+  hours: "8:00 am to 12:00 am (midnight)",
+};
+
+export const CARD_FEE_PERCENT = 5; // added to the total when a guest pays by card
+
+export const MAPS = {
+  // Pin he sent for the Marina meeting point. Parking is in front of the boat.
+  marina: "https://www.google.com/maps/search/?api=1&query=25.0953656,55.1388293",
+  creek: "https://maps.app.goo.gl/jpCx4gMWfvvK8o8b6",
+};

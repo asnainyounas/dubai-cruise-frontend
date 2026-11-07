@@ -1,4 +1,4 @@
-import { CURRENCY, PICKUP_EXTRA, PRICE, SAILINGS } from "./business";
+import { CURRENCY, MAPS, PICKUP_EXTRA, PRICE, SAILINGS } from "./business";
 export const WA_BASE = "https://api.whatsapp.com/send?phone=+971565481752&text=Hello_";
 
 export interface NavItem {
@@ -102,8 +102,8 @@ export interface PackageItem {
 export const PACKAGES: PackageItem[] = [
   {
     col: 1,
-    img: "dhow-cruise-creek-small.jpg",
-    alt: "Dubai Cruise Creek",
+        img: "hallview-28.jpg",
+    alt: "Dining hall on the Dubai Creek dhow cruise",
     title: "Dhow Cruise Creek",
     slug: "creek-cruise",
     duration: "Duration : 2 hours",
@@ -140,8 +140,8 @@ export const PACKAGES: PackageItem[] = [
   {
     col: 2,
     big: true,
-    img: "dhow-cruise-marina-small.jpg",
-    alt: "Dubai Marina Dinner Cruise",
+        img: "boat-4.jpg",
+    alt: "Dubai Marina dinner cruise boat lit up at night",
     title: "Dubai Marina Dinner Cruise",
     slug: "dubai-marina-cruise",
     duration: "Duration : 2 hours",
@@ -240,14 +240,8 @@ export interface RouteItem {
 }
 
 export const ROUTES: RouteItem[] = [
-  {
-    title: "Dhow Cruise Marina Route",
-    href: "https://www.google.ae/maps/place/Aisha+2+Dhow+Cruise/@25.069333,55.1311557,338m/data=!3m2!1e3!4b1!4m12!1m6!3m5!1s0x3e5f13513605329f:0x7c513b0c8fa8b3e1!2sAisha+2+Dhow+Cruise!8m2!3d25.0698359!4d55.1306508!3m4!1s0x3e5f13513605329f:0x7c513b0c8fa8b3e1!8m2!3d25.0698359!4d55.1306508",
-  },
-  {
-    title: "Dhow Cruise Creek Route",
-    href: "https://maps.app.goo.gl/jpCx4gMWfvvK8o8b6",
-  },
+  { title: "Dubai Marina Dinner Cruise Route", href: MAPS.marina },
+  { title: "Dhow Cruise Creek Route", href: MAPS.creek },
 ];
 
 export interface FaqItemData {

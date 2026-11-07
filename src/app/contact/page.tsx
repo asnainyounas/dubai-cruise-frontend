@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { BUSINESS } from "@/data/business";
-import { SAILINGS } from "@/data/business";
+import { BUSINESS, OFFICE, SAILINGS } from "@/data/business";
 import { CRUISES } from "@/data/cruises";
 
 export const metadata: Metadata = {
@@ -41,13 +40,17 @@ export default function ContactPage() {
         <section className="cruise-section-block">
           <h2 className="cruise-section-heading">Our details</h2>
           <ul className="cruise-why-list">
-            <li>WhatsApp: {BUSINESS.whatsappDisplay}</li>
+            <li>WhatsApp: +{BUSINESS.whatsappNumber}</li>
             <li>
               Email:{" "}
               <a href={`mailto:${BUSINESS.email}`} style={linkStyle}>
                 {BUSINESS.email}
               </a>
             </li>
+            <li>
+              Office: {OFFICE.name}, {OFFICE.address}
+            </li>
+            <li>Opening hours: {OFFICE.hours}</li>
           </ul>
         </section>
 

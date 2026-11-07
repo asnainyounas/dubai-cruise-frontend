@@ -1,71 +1,60 @@
 import type { Metadata } from "next";
-import { BUSINESS, CURRENCY, PICKUP_EXTRA, PRICE, SAILINGS } from "@/data/business";
+import {
+  BUSINESS,
+  CARD_FEE_PERCENT,
+  CURRENCY,
+  OFFICE,
+  PICKUP_EXTRA,
+  PRICE,
+  SAILINGS,
+} from "@/data/business";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions",
-  description: "Terms and conditions for booking a Dubai Marina or Dubai Creek dinner cruise.",
+  description:
+    "Terms and conditions for booking our Dubai Marina and Dubai Creek dinner cruises.",
   alternates: { canonical: "/terms-and-conditions" },
-  // Remove this line when every TODO below has been replaced with the owner's real policy.
+  // Still a draft: remove this line when the owner has reviewed every section.
   robots: { index: false, follow: false },
 };
 
-// DRAFT: must be reviewed by the business owner before launch.
 const TODO = "TODO: owner to supply and review";
 const aed = (n: number) => `${n} ${CURRENCY}`;
-const WA = `+${BUSINESS.whatsappNumber}`;
 
-const SECTIONS: { title: string; body: string[] }[] = [
+// DRAFT: must be reviewed by the business owner before launch.
+const SECTIONS: { title: string; body: string }[] = [
   {
     title: "Bookings and confirmation",
-    body: [
-      `Bookings are confirmed on WhatsApp at ${WA}. A booking is not confirmed until you receive a confirmation message from us.`,
-    ],
+    body: `Bookings are confirmed on WhatsApp at +${BUSINESS.whatsappNumber}. A booking is not confirmed until you receive a confirmation message from us.`,
   },
   {
-    title: "Prices and payment",
-    body: [
-      `Prices are per person. The Creek cruise costs ${aed(PRICE.creek)}. The Marina early sailing costs ${aed(PRICE.marinaEarly)} and the Marina dinner sailing costs ${aed(PRICE.marinaLate)}.`,
-      "Children under 3 travel free.",
-      `How to pay and any card fee: ${TODO}`,
-    ],
+    title: "Prices",
+    body: `Prices are per person. The Creek cruise costs ${aed(PRICE.creek)}. The Marina sunset sailing costs ${aed(PRICE.marinaEarly)} and the Marina dinner sailing costs ${aed(PRICE.marinaLate)}. Children under 3 travel free.`,
   },
   {
-    title: "Pick-up and drop-off",
-    body: [
-      `Pick-up and drop-off can be arranged for an extra ${aed(PICKUP_EXTRA.marina)} per person on the Marina cruise and ${aed(PICKUP_EXTRA.creek)} per person on the Creek cruise.`,
-      "Ask us on WhatsApp whether your area is covered before you book.",
-    ],
+    title: "Payment",
+    body: `You can pay by cash, by card or by payment link, and a deposit can be arranged. If you pay by card, ${CARD_FEE_PERCENT}% is added to the total amount. Deposit amount and deposit refunds: ${TODO}`,
   },
   {
     title: "Changes and cancellations",
-    body: [
-      "You can change or cancel your booking up to 4 hours before the cruise.",
-      `Refunds and changes after that time: ${TODO}`,
-    ],
+    body: `You can change or cancel your booking up to 4 hours before the cruise. Refunds, and what happens after that time: ${TODO}`,
+  },
+  {
+    title: "Pick-up and drop-off",
+    body: `Pick-up and drop-off can be arranged for an extra ${aed(PICKUP_EXTRA.marina)} per person on the Marina cruise and ${aed(PICKUP_EXTRA.creek)} per person on the Creek cruise. Please ask us on WhatsApp whether your area is covered.`,
   },
   {
     title: "Arrival and boarding",
-    body: [
-      `Marina early sailing: boarding at ${SAILINGS.marinaEarly.boarding}, cruising from ${SAILINGS.marinaEarly.cruise}. Marina dinner sailing: boarding at ${SAILINGS.marinaLate.boarding}, cruising from ${SAILINGS.marinaLate.cruise}. Creek cruise: boarding at ${SAILINGS.creek.boarding}, cruising normally from ${SAILINGS.creek.cruise}.`,
-      "The Marina cruise boards at Dubai Marina Harbour, Gate No. 3. The Creek cruise boards on Baniyas Road, Creek side, opposite the Rolex twin towers.",
-      "If you arrive late, your seat will still be available.",
-    ],
-  },
-   {
-    title: "Behaviour and safety on board",
-    body: [
-      "We ask all guests to behave respectfully towards other guests and the crew, and to follow the crew's instructions on board.",
-      "Please look after children at all times and move carefully on the boat, especially on deck and on the stairs.",
-    ],
+    body: `Marina sunset sailing: boarding at ${SAILINGS.marinaEarly.boarding}. Marina dinner sailing: boarding at ${SAILINGS.marinaLate.boarding}. Creek cruise: boarding at ${SAILINGS.creek.boarding}. Late arrivals: ${TODO}`,
   },
   {
-    title: "Dress code",
-    body: ["There is no special dress code."],
+    title: "Children",
+    body: "There is no age limit for children. Children under 3 travel free.",
   },
- 
+  { title: "Dress code", body: "There is no special dress code." },
   {
     title: "Contact",
-    body: [`Message us on WhatsApp at ${WA} or email ${BUSINESS.email}.`],
+    body: `WhatsApp: +${BUSINESS.whatsappNumber}. Email: ${BUSINESS.email}. Office: ${OFFICE.name}, ${OFFICE.address}. Opening hours: ${OFFICE.hours}.`,
   },
 ];
 
@@ -79,11 +68,7 @@ export default function TermsPage() {
         {SECTIONS.map((s) => (
           <section className="cruise-section-block" key={s.title}>
             <h2 className="cruise-section-heading">{s.title}</h2>
-            {s.body.map((para, i) => (
-              <p className="cruise-body-text" key={i}>
-                {para}
-              </p>
-            ))}
+            <p className="cruise-body-text">{s.body}</p>
           </section>
         ))}
       </div>

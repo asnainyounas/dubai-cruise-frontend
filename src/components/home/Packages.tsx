@@ -44,6 +44,8 @@ function PackageCard({ pkg, animIndex }: { pkg: PackageItem; animIndex: number }
   );
 }
 
+const VISIBLE = PACKAGES.filter((p) => p.hasPage);
+
 export default function Packages() {
   return (
     <section className="general-row package-block-row" id="packages">
@@ -51,8 +53,8 @@ export default function Packages() {
         <div className="main-title mb30">Top Dhow Cruise Packages</div>
       </div>
       <div className="dcontainer-fluid">
-        <div className="packages-grid">
-          {PACKAGES.map((pkg, i) => (
+        <div className={`packages-grid${VISIBLE.length < 3 ? " packages-grid--few" : ""}`}>
+          {VISIBLE.map((pkg, i) => (
             <PackageCard pkg={pkg} animIndex={i} key={pkg.title} />
           ))}
         </div>
