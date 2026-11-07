@@ -1,34 +1,17 @@
-export default function Logo({ className }: { className?: string }) {
+import { BUSINESS } from "@/data/business";
+
+export default function Logo() {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 320 96"
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
-      aria-label="Arabian Dhow Cruise"
-    >
-      {/* Sails */}
-      <path d="M46 12 C46 12 14 44 10 62 L46 62 Z" fill="#c8963e" />
-      <path d="M50 24 L50 62 L80 62 C76 48 64 34 50 24 Z" fill="#0f3a56" />
-      {/* Mast */}
-      <line x1="46" y1="10" x2="46" y2="66" stroke="#0f3a56" strokeWidth="2" />
-      {/* Hull */}
-      <path d="M6 66 H88 C84 76 76 82 66 82 H28 C18 82 10 76 6 66 Z" fill="#0f3a56" />
-      {/* Waves */}
-      <path
-        d="M6 90 q8 -5 16 0 t16 0 t16 0 t16 0 t16 0"
-        fill="none"
-        stroke="#c8963e"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      {/* Name */}
-      <text x="104" y="50" fontFamily="Georgia, 'Times New Roman', serif" fontSize="40" fontWeight="700" fill="#0f3a56">
-        Arabian
-      </text>
-      <text x="106" y="78" fontFamily="Georgia, 'Times New Roman', serif" fontSize="20" fontWeight="700" letterSpacing="4" fill="#c8963e">
-        DHOW CRUISE
-      </text>
-    </svg>
+    <span className="site-logo">
+      <svg viewBox="0 0 64 64" width="46" height="46" aria-hidden="true" focusable="false">
+        <path d="M30 6 L30 40 L8 40 Z" fill="#f26b21" />
+        <path d="M34 14 L34 40 L52 40 Z" fill="#f7a35c" />
+        <path d="M6 44 H58 L52 56 H14 Z" fill="#0f3a56" />
+      </svg>
+      <span className="site-logo-text">
+        <strong>{BUSINESS.name}</strong>
+        <small>Dinner cruises in Dubai</small>
+      </span>
+    </span>
   );
 }

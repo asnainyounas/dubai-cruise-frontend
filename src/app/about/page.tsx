@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PACKAGES } from "@/data/home";
 import BookingForm from "@/components/book/BookingForm";
+import { BUSINESS, OFFICE } from "@/data/business";
 
 export const metadata: Metadata = {
   title: "Book Dhow Cruise Dubai - Online Reservation",
@@ -32,6 +33,17 @@ export default async function BookPage({ searchParams }: BookPageProps) {
   return (
     <div className="book-page-wrap">
       <div className="dcontainer" style={{ maxWidth: "800px", padding: "50px 20px" }}>
+        <section className="cruise-section-block">
+          <h2 className="cruise-section-heading">Who we are</h2>
+          <p className="cruise-body-text">
+            {BUSINESS.name} runs dinner cruises in Dubai on our own boats, on Dubai Marina and on Dubai Creek.
+          </p>
+          <p className="cruise-body-text">
+            You can visit our office at {OFFICE.name}, {OFFICE.address}. We are open {OFFICE.hours}.
+          </p>
+          <p className="cruise-body-text">Our story: TODO: add real details</p>
+        </section>
+
         <div className="text-center mb30">
           <span
             style={{

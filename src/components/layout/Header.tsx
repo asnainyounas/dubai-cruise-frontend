@@ -24,7 +24,7 @@ export default function Header() {
       <nav>
         <div className="top-header">
           <Link className="navbar-brand" href="/">
-            <Logo className="site-logo" />
+            <Logo />
           </Link>
           <div className="top-header-right">
             <ul className="top-contact-ul">

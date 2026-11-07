@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: cruise.seoTitle,
+    title: { absolute: cruise.seoTitle },
     description: cruise.seoDescription,
     alternates: {
       canonical: `/cruises/${cruise.slug}`,
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     // Placeholder pages are hidden from search engines until real content is added.
     robots: cruise.draft ? { index: false, follow: false } : undefined,
     openGraph: {
-      title: cruise.seoTitle,
+      title: { absolute: cruise.seoTitle },
       description: cruise.seoDescription,
       type: "website",
       images: [

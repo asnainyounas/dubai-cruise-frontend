@@ -1845,3 +1845,35 @@ button {
     grid-template-columns: minmax(0, 1fr) !important;
   }
 }
+
+/* ---- Logo ---- */
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #0f3a56;
+}
+.site-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.site-logo-text strong {
+  font-size: 24px;
+  font-weight: 700;
+}
+.site-logo-text small {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #f26b21;
+}
+@media (max-width: 575px) {
+  .site-logo-text strong {
+    font-size: 18px;
+  }
+  .site-logo svg {
+    width: 38px;
+    height: 38px;
+  }
+}
