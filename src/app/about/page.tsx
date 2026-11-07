@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PACKAGES } from "@/data/home";
-import BookingForm from "@/components/book/BookingForm";
+
 import { BUSINESS, OFFICE } from "@/data/business";
 
 export const metadata: Metadata = {
@@ -12,23 +12,13 @@ export const metadata: Metadata = {
   },
 };
 
-interface BookPageProps {
-  searchParams: Promise<{
-    tour?: string;
-  }>;
-}
-
-export default async function BookPage({ searchParams }: BookPageProps) {
-  const { tour } = await searchParams;
-
+export default function AboutPage() {
   const tours = PACKAGES.map((pkg) => ({
     slug: pkg.slug,
     title: pkg.title,
   }));
 
-  // Fallback to first tour if slug is unknown
-  const validTour = tours.some((t) => t.slug === tour);
-  const initialTourSlug = validTour ? tour : tours[0]?.slug;
+  const initialTourSlug = tours[0]?.slug;
 
   return (
     <div className="book-page-wrap">
@@ -66,7 +56,7 @@ export default async function BookPage({ searchParams }: BookPageProps) {
           </p>
         </div>
 
-        <BookingForm initialTourSlug={initialTourSlug} tours={tours} />
+        
       </div>
     </div>
   );

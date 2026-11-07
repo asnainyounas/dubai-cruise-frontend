@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FOOTER_LINKS } from "@/data/nav";
 import ScrollToTop from "./ScrollToTop";
-import { BUSINESS } from "@/data/business";
+import { BUSINESS, OFFICE } from "@/data/business";
 // ---- Business details: edit these here, nothing else in this file needs changing ----
 const BUSINESS_NAME = BUSINESS.name;
 const WHATSAPP_NUMBER = BUSINESS.whatsappNumber;
@@ -47,8 +47,13 @@ export default function Footer() {
         <div className="dcontainer-fluid">
           <div className="footer-grid">
             <div className="footer-block footer-powered">
-              <div className="footer-logo">
+                           <div className="footer-logo">
                 <span className="footer-brand-name">{BUSINESS_NAME}</span>
+                <p className="ft-office">
+                  {OFFICE.name}, {OFFICE.address}
+                  <br />
+                  Open {OFFICE.hours}
+                </p>
               </div>
             </div>
             <div className="footer-block footer-links">

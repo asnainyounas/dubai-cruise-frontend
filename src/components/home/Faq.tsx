@@ -40,8 +40,8 @@ export interface FaqProps {
 export default function Faq({
   items,
   title = "Frequently Asked Questions",
-  imageSrc = "/img/faq's.jpg",
-  imageAlt = "Dhow cruise faqs",
+  imageSrc = "/img/lightingboat-18.jpg",
+  imageAlt = "Wooden dhow lit up at night on the water",
 }: FaqProps = {}) {
   const [openIdx, setOpenIdx] = useState(0);
   const [showExtra, setShowExtra] = useState(false);
@@ -64,6 +64,7 @@ export default function Faq({
               alt={imageAlt}
               width={420}
               height={420}
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div className="faq-list">

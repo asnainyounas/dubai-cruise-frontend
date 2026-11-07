@@ -14,14 +14,16 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  return getAllCruiseSlugs().map((slug) => ({ slug }));
+  return getAllCruiseSlugs()
+    .filter((slug) => !getCruiseBySlug(slug)?.draft)
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const cruise = getCruiseBySlug(slug);
 
-  if (!cruise) {
+  if (!cruise || cruise.draft) {
     return {};
   }
 
@@ -51,7 +53,7 @@ export default async function CruiseDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const cruise = getCruiseBySlug(slug);
 
-  if (!cruise) {
+  if (!cruise || cruise.draft) {
     notFound();
   }
 

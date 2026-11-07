@@ -45,3 +45,8 @@ export const MAPS = {
   marina: "https://www.google.com/maps/search/?api=1&query=25.0953656,55.1388293",
   creek: "https://maps.app.goo.gl/jpCx4gMWfvvK8o8b6",
 };
+
+export const MAP_COORDS = {
+  marina: { lat: 25.0953656, lng: 55.1388293 }, // Dubai Marina Harbour, Gate No. 3
+  creek: { lat: 25.2651944, lng: 55.3083056 }, // Baniyas Road, Creek side
+};
