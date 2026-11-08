@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { PACKAGES } from "@/data/home";
-
 import { BUSINESS, OFFICE } from "@/data/business";
 
 export const metadata: Metadata = {
@@ -13,13 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const tours = PACKAGES.map((pkg) => ({
-    slug: pkg.slug,
-    title: pkg.title,
-  }));
-
-  const initialTourSlug = tours[0]?.slug;
-
   return (
     <div className="book-page-wrap">
       <div className="dcontainer" style={{ maxWidth: "800px", padding: "50px 20px" }}>
@@ -31,7 +22,6 @@ export default function AboutPage() {
           <p className="cruise-body-text">
             You can visit our office at {OFFICE.name}, {OFFICE.address}. We are open {OFFICE.hours}.
           </p>
-          <p className="cruise-body-text">Our story: TODO: add real details</p>
         </section>
 
         <div className="text-center mb30">

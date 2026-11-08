@@ -13,6 +13,7 @@ const mainFont = Outfit({
   variable: "--font-main",
 });
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const IS_LIVE = !/localhost|vercel\.app/.test(SITE_URL);
 
 const TITLE = `Dhow Cruise Dubai from ${PRICE.creek} ${CURRENCY} | Marina and Creek Dinner Cruises`;
 const DESCRIPTION = `Two-hour dinner cruises in Dubai Marina and on Dubai Creek with a buffet dinner, live shows and music, from ${PRICE.creek} ${CURRENCY} per person. Book on WhatsApp.`;
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
     template: `%s | ${BUSINESS.name}`,
   },
   description: DESCRIPTION,
+  robots: IS_LIVE ? undefined : { index: false, follow: false },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,

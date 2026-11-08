@@ -53,18 +53,19 @@ const img = (url: string, alt: string): CruiseImage => ({ url, alt });
 const pickup = (extra: number) =>
   `Pick-up and drop-off can be arranged for an extra ${aed(extra)} per person. Ask us on WhatsApp whether your area is covered.`;
 const CHANGE_POLICY = "You can change or cancel your booking up to 4 hours before the cruise.";
-const CHILDREN = "Yes. There is no age limit for children. Children under 3 travel free, and children aged 3 and over pay for a ticket.";
+const CHILDREN =
+  "Children of any age can join. Children under 3 travel free, and children aged 3 and over pay the per-person price.";
 const NO_DRESS_CODE = "There is no special dress code.";
 
 const PAYMENT = `You can pay by cash, by card or by payment link, and a deposit can be arranged. If you pay by card, ${CARD_FEE_PERCENT}% is added to the total amount. Ask us on WhatsApp for the details.`;
 
 const MARINA_TIMES = `Sunset sailing: boarding at ${SAILINGS.marinaEarly.boarding}, cruising from ${SAILINGS.marinaEarly.cruise}. Dinner sailing: boarding at ${SAILINGS.marinaLate.boarding}, cruising from ${SAILINGS.marinaLate.cruise}.`;
-const MARINA_PRICES = `The sunset sailing costs ${aed(PRICE.marinaEarly)} per person and the dinner sailing costs ${aed(PRICE.marinaLate)} per person. Children under 3 travel free.`;
+const MARINA_PRICES = `The sunset sailing costs ${aed(PRICE.marinaEarly)} per person and the dinner sailing costs ${aed(PRICE.marinaLate)} per person. Children under 3 travel free, and children aged 3 and over pay the per-person price.`;
 const MARINA_SIGHTS =
   "You pass the Marina skyscrapers, the Dubai Marina canal, Dubai Marina Mall and Pier 7, the twisted tower on the canal, and Jumeirah Beach, with views towards Ain Dubai.";
 
 const CREEK_TIMES = `Boarding is at ${SAILINGS.creek.boarding}, half an hour before sailing. The cruise is normally from ${SAILINGS.creek.cruise}.`;
-const CREEK_PRICES = `The Creek cruise costs ${aed(PRICE.creek)} per person. Children under 3 travel free.`;
+const CREEK_PRICES = `The Creek cruise costs ${aed(PRICE.creek)} per person. Children under 3 travel free, and children aged 3 and over pay the per-person price.`;
 const CREEK_SIGHTS =
   "On the way you pass places such as the Spice Souk, the Bur Dubai Bazaar, Dubai Museum, the Dubai Heritage Center and Village, Al Maktoum Bridge, Sheikh Maktoum House, the Al Bastakia District, the Ruler's Court, Dubai Heritage House, the National Bank of Dubai building, Infinity Bridge and Palm Deira.";
 const CREEK_LOCATION =
@@ -108,7 +109,7 @@ export const CRUISES: Record<string, CruiseData> = {
       "A buffet dinner is served on board during the cruise, and soft drinks are free.",
       "Five live shows are part of the evening: Tanura dance, puppet dance, horse dance, Sufi dance and an Egyptian lights Tanura show, with music throughout.",
       "There is no welcome drink on the Creek cruise.",
-      `Drinks beyond the free soft drinks: ${TODO}`,
+      "Soft drinks are free. If you have a question about other drinks, ask us on WhatsApp.",
     ],
     whyChoose: [
       "A historic Creek route past heritage landmarks",
@@ -198,7 +199,7 @@ export const CRUISES: Record<string, CruiseData> = {
     foodAndEntertainment: [
       "Welcome drinks and an international buffet dinner are included, along with unlimited soft beverages.",
       "Live entertainment on board includes a Tanura show, a drum show and a puppet show, with music throughout the cruise.",
-      `Drinks beyond the free soft drinks: ${TODO}`,
+      "Soft drinks are free. If you have a question about other drinks, ask us on WhatsApp.",
     ],
     whyChoose: [
       "A choice of sunset or dinner sailing",

@@ -260,7 +260,7 @@ export const FAQS_MAIN: FaqItemData[] = [
   },
   {
     q: "How much does a cruise cost?",
-    a: `The Creek cruise costs ${PRICE.creek} ${CURRENCY} per person. The Marina sunset sailing costs ${PRICE.marinaEarly} ${CURRENCY} per person and the Marina dinner sailing costs ${PRICE.marinaLate} ${CURRENCY} per person. Children under 3 travel free.`,
+    a: `The Creek cruise costs ${PRICE.creek} ${CURRENCY} per person. The Marina sunset sailing costs ${PRICE.marinaEarly} ${CURRENCY} per person and the Marina dinner sailing costs ${PRICE.marinaLate} ${CURRENCY} per person. Children under 3 travel free, and children aged 3 and over pay the per-person price.`,
   },
   {
     q: "What is included in the cruise?",
@@ -311,7 +311,7 @@ export const FAQS_EXTRA: FaqItemData[] = [
   },
   {
     q: "Can children join the cruise?",
-       a: "Yes. There is no age limit for children. Children under 3 travel free, and children aged 3 and over pay for a ticket.",
+    a: "Children of any age can join. Children under 3 travel free, and children aged 3 and over pay the per-person price.",
   },
 ];
 

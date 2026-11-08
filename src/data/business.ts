@@ -25,7 +25,6 @@ export const PICKUP_EXTRA = {
 };
 
 export const SAILINGS = {
-  // CONFIRM: his price list said "7-9" for this sailing, but the times he confirmed earlier were 6:00 to 8:00 pm.
    // CONFIRM boarding with your friend: 6:30 pm is a guess based on the other sailings, which board 30 minutes before.
   marinaEarly: { boarding: "6:30 pm", cruise: "7:00 pm to 9:00 pm", start: "7:00 PM" },
   marinaLate: { boarding: "8:30 pm", cruise: "9:00 pm to 11:00 pm", start: "9:00 PM" },

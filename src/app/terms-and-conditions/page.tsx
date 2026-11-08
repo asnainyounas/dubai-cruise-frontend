@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const TODO = "TODO: owner to supply and review";
 const aed = (n: number) => `${n} ${CURRENCY}`;
 
 // DRAFT: must be reviewed by the business owner before launch.
@@ -29,15 +28,15 @@ const SECTIONS: { title: string; body: string }[] = [
   },
   {
     title: "Prices",
-    body: `Prices are per person. The Creek cruise costs ${aed(PRICE.creek)}. The Marina sunset sailing costs ${aed(PRICE.marinaEarly)} and the Marina dinner sailing costs ${aed(PRICE.marinaLate)}. Children under 3 travel free.`,
+    body: `Prices are per person. The Creek cruise costs ${aed(PRICE.creek)}. The Marina sunset sailing costs ${aed(PRICE.marinaEarly)} and the Marina dinner sailing costs ${aed(PRICE.marinaLate)}. Children under 3 travel free, and children aged 3 and over pay the per-person price.`,
   },
   {
     title: "Payment",
-    body: `You can pay by cash, by card or by payment link, and a deposit can be arranged. If you pay by card, ${CARD_FEE_PERCENT}% is added to the total amount. Deposit amount and deposit refunds: ${TODO}`,
+    body: `You can pay by cash, by card or by payment link, and a deposit can be arranged. If you pay by card, ${CARD_FEE_PERCENT}% is added to the total amount. The deposit amount is confirmed with you on WhatsApp when you book.`,
   },
   {
     title: "Changes and cancellations",
-    body: `You can change or cancel your booking up to 4 hours before the cruise. Refunds, and what happens after that time: ${TODO}`,
+    body: `You can change or cancel your booking up to 4 hours before the cruise. If you need to change or cancel later than that, please message us on WhatsApp and we will tell you what is possible.`,
   },
   {
     title: "Pick-up and drop-off",
@@ -45,13 +44,17 @@ const SECTIONS: { title: string; body: string }[] = [
   },
   {
     title: "Arrival and boarding",
-    body: `Marina sunset sailing: boarding at ${SAILINGS.marinaEarly.boarding}. Marina dinner sailing: boarding at ${SAILINGS.marinaLate.boarding}. Creek cruise: boarding at ${SAILINGS.creek.boarding}. Late arrivals: ${TODO}`,
+    body: `Marina sunset sailing: boarding at ${SAILINGS.marinaEarly.boarding}. Marina dinner sailing: boarding at ${SAILINGS.marinaLate.boarding}. Creek cruise: boarding at ${SAILINGS.creek.boarding}.`,
   },
   {
     title: "Children",
-    body: "There is no age limit for children. Children under 3 travel free.",
+    body: "Children of any age can join. Children under 3 travel free, and children aged 3 and over pay the per-person price.",
   },
   { title: "Dress code", body: "There is no special dress code." },
+  {
+    title: "Behaviour and safety on board",
+    body: "Please follow the instructions of the crew on board, for your own safety and the safety of other guests.",
+  },
   {
     title: "Contact",
     body: `WhatsApp: +${BUSINESS.whatsappNumber}. Email: ${BUSINESS.email}. Office: ${OFFICE.name}, ${OFFICE.address}. Opening hours: ${OFFICE.hours}.`,
