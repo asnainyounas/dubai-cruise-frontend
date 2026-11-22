@@ -9,11 +9,15 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const STORES_BOOKINGS = Boolean(process.env.NEXT_PUBLIC_API_URL);
+
 // DRAFT: the owner must review this page before launch.
 const SECTIONS: { title: string; body: string }[] = [
   {
     title: "Information you give us",
-    body: "When you use the booking box on a cruise page, the details you enter (date, number of guests, your name and notes) are placed into a WhatsApp message that you send to us. This website does not store them.",
+    body: STORES_BOOKINGS
+      ? "When you use the booking box on a cruise page, the details you enter (date, sailing, number of guests, your name, phone number, email if you give one, and notes) are saved on our booking system so that we can confirm your booking, and they are also placed into a WhatsApp message that you send to us."
+      : "When you use the booking box on a cruise page, the details you enter (date, number of guests, your name and notes) are placed into a WhatsApp message that you send to us. This website does not store them.",
   },
   {
     title: "How we use your information",

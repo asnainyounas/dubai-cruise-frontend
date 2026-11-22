@@ -1846,6 +1846,116 @@ button {
   }
 }
 
+/* ---- Booking honeypot: visually hidden but accessible to bots ---- */
+.bk-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  opacity: 0 !important;
+}
+
+/* ---- Booking confirmation panel & backend enhancements ---- */
+.bk-success-panel {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 24px 20px;
+  text-align: center;
+}
+.bk-success-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #166534;
+  margin-bottom: 8px;
+}
+.bk-success-ref {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #0f3a56;
+  margin: 12px 0;
+  padding: 8px 12px;
+  background: #ffffff;
+  border: 2px dashed #0f3a56;
+  border-radius: 6px;
+  display: inline-block;
+}
+.bk-success-details {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+  margin: 16px 0;
+  text-align: left;
+  background: #ffffff;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+.bk-success-details p {
+  margin: 4px 0;
+}
+.bk-success-note {
+  font-size: 13px;
+  color: #4b5563;
+  margin-top: 12px;
+}
+.bk-reset-btn {
+  background: none;
+  border: none;
+  color: var(--primary, #f26b21);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 16px;
+  display: inline-block;
+}
+.bk-field-hint {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: -6px;
+  margin-bottom: 12px;
+}
+.bk-total-box {
+  margin: 14px 0;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+.bk-total-amount {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f3a56;
+}
+.bk-total-cardnote {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.bk-loading {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.bk-unavailable-note {
+  font-size: 12px;
+  color: #b45309;
+  background: #fef3c7;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+
 /* ---- Logo ---- */
 .site-logo {
   display: inline-flex;

@@ -203,6 +203,7 @@ export default async function CruiseDetailPage({ params }: PageProps) {
         <aside className="bk-aside" id="book">
           <BookingBox
             cruiseTitle={cruise.title}
+            cruiseSlug={cruise.slug}
             startingPrice={cruise.startingPrice}
             whatsappNumber={WHATSAPP_NUMBER}
           />
