@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 import Faq from "@/components/home/Faq";
+import { FAQS_EXTRA, FAQS_MAIN } from "@/data/home";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
-  description: "Answers to common questions about our dhow cruises in Dubai and how to book.",
+  description:
+    "Answers about our Dubai Marina and Dubai Creek dinner cruises: prices, sailing times, what is included, pick-up, children and how to book.",
   alternates: { canonical: "/faqs" },
-  // Placeholder page: remove this line when the TODO answers are filled in.
-  robots: { index: false, follow: false },
 };
 
-const TODO = "TODO: add real details";
-
-const FAQS = [
+// General questions first, then the cruise questions shared with the home page.
+const INTRO_FAQS = [
   {
     q: "What is a dhow?",
     a: "A dhow is a traditional wooden vessel that has been used for centuries around the Arabian Gulf. Dhow cruises in Dubai use boats built in this style.",
@@ -24,20 +23,9 @@ const FAQS = [
     q: "Where does the Marina cruise sail?",
     a: "Dubai Marina is a canal district on the Dubai coastline, surrounded by high-rise towers and waterfront walkways.",
   },
-  {
-    q: "What sailings does the Marina cruise offer?",
-    a: `The Dubai Marina cruise has sunset and dinner sailings. Exact times: ${TODO}`,
-  },
-  {
-    q: "How do I book?",
-    a: "Use the booking box on any cruise page, or message us on WhatsApp +971558479933. Bookings are confirmed on WhatsApp.",
-  },
-  { q: "How much does a cruise cost?", a: `Prices: ${TODO}` },
-  { q: "What is included?", a: `Inclusions: ${TODO}` },
-  { q: "Is hotel pick-up and drop-off available?", a: `Pick-up and drop-off details: ${TODO}` },
-  { q: "Is there a dress code?", a: `Dress code: ${TODO}` },
-  { q: "Can I change or cancel my booking?", a: `Change and cancellation policy: ${TODO}` },
 ];
+
+const FAQS = [...INTRO_FAQS, ...FAQS_MAIN, ...FAQS_EXTRA];
 
 export default function FaqsPage() {
   return (
