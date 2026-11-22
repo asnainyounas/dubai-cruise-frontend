@@ -1,0 +1,38 @@
+{
+  "id": "6718cb1234567890abcdef01",
+  "title": "Dhow Cruise Creek",
+  "slug": "creek-cruise",
+  "shortDescription": "A two-hour dhow cruise on Dubai Creek with a buffet dinner, live shows and music.",
+  "category": "dinner",
+  "departurePoint": "Baniyas Road, Creek side, opposite the Rolex twin towers.",
+  "durationMinutes": 120,
+  "adultPrice": 35,
+  "childPrice": 35,
+  "currency": "AED",
+  "images": [
+    {
+      "url": "/img/hallview-28.jpg",
+      "alt": "Dining hall on the Dubai Creek dhow cruise"
+    }
+  ],
+  "inclusions": [
+    "Two hours of cruising",
+    "Buffet dinner",
+    "Five live entertainment shows",
+    "Music on board",
+    "Free soft drinks"
+  ],
+  "faqs": [
+    {
+      "question": "What time is boarding?",
+      "answer": "Boarding is at 8:00 pm, half an hour before sailing."
+    }
+  ],
+  "seoTitle": "Dhow Cruise Creek Dubai from 35 AED",
+  "seoDescription": "Two-hour dhow dinner cruise on Dubai Creek",
+  "isActive": true,
+  "pickupAvailable": false,
+  "sortOrder": 1,
+  "createdAt": "2026-10-21T12:00:00.000Z",
+  "updatedAt": "2026-10-21T12:00:00.000Z"
+}
